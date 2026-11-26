@@ -1,0 +1,2322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="星耀奥数" />
+  <meta name="theme-color" content="#0B1324" />
+  <link rel="apple-touch-icon" href="data:image/png;base64,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" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAGQklEQVR42u3b23IVVRCA4dwjeCBEFBHFZAdyMCQmISEYohEf0zsfw/JFfAEvvaAKyhu3NbMorfTqOew1M909f9V/t2qRme6PnSpI1m7d3SQSW2MEBA4CB4GDwEET49giEgMHdcdx9ttbmkl5HOtbYoxsRjgyBhpw5E4pRo04FmLp2oICp28ZHOAAB4GDSuL4YH0hVl3LnVKM9C0vcWyLpWvbFDh9y+AAh4Lj3rZYfS1zSjHStwwOcICDeuF4IpauPaHA6VsGBzjAQeAgcNA4ODaeitXXMqcUI33L4AAHOAgcVBLH7Y2nYtW13CnFSN/yEseOWLq2Q4HTtzwSjr9/3xRjPdOOzjQOiEw7NAc4IDLVuJpwfLojVl/LnHatzdv++8KFvpzrxpyVvuUljl2xdG23SC1fOL327jwbf0r6li3imCGRqebjFcd8fEw4HMc4whOZfCzucYQkYmQgJnDgw+YoGnHsiaVre2UrMZc9v1l7fX3La7fv74nV1zKnq1RgQAM81QgZfHF9yxPgmCERsy/bgOPO/T2x6lrutEirj2zZoE8Y/h31LU+Jo9T4AssY+gkbceyLpWv741Rijvt28vI6+pat4Cgy0K4z/WOxaJPxt5gFjvH/zhXH4e7zzxmOMadcEIfTb4sucYzz+VwEh6/vIx1xfPatWH0tczpaBeae/8Pb4pjo8UZI37J1HIPuYBUc3lnEwVFkGTf30Q/HEE8CDnMfIT1whGEREEfZDXXCEYxFSxwHYunagc2KfLa3xFHo+4jFMepb9opj2V9v3rnAsXxOszOMjKPKLI73T+gVx4efH4hV13KnFno/+t4+BsXx38czO0N9y0Fw9CMyEI6bD+YXxzOxdO2Z2W7uoKuPIXCIT2V2hvqWo+HoRKQsDuV5wGEIR0sipXA0Pgk4zOFo9FEER5vHAIdFHDqRFXG0fwC/OA7F0rVDs7XfzYr/HLIKi4TD6Az1Lc8IRykfPb6uWxwPDsXqa5lTC/VY0opEen9FszPUtzxHHD2IrPi1wOEMx5j5xXEklq4dmc0VDqMz1LcMDnCAAxw9cHz04EisupY7tZAjHGZnqG8ZHOAABzj64PjiO7H6WubUQjd3cOfXP3ukLLXUH2h2hvqWwQEOcIADHOAABzhGwnEslq4dm80VDqMz1LcMDnCAAxx9cDw8FquvZU4t5AmH1RnqWwYHODQcJ2Lp2onZXOEwOkN9y6Fw2P2/Fac4Pn54IlZdy51ayBEOszPUtwwOcIADHL1wnIqla6dmc4XD6Az1LYMDHAqOL0/F6muZUwt5wmF1hvqWwQEOcICjF47nYunac7O5wmF0hvqWwQEOcIADHOAABzjGwfHoTKy+ljm1kCccVmeobxkc4Mjj+OTRmVh1LXdqIUc4zM5Q3zI4wAEOcPTCcS6Wrp2bzRUOozPUtwwOcIADHOAAR1EcX52L1dcypxbyhMPqDPUtgwMcGo4XYunaC7O5wmF0hvqWwQEOcIBjVjgIHDQljguxdO2CAqdvee3u1xdi1bXcKcVI3zI4wAGOdr355RY4wFFTaNOccbwUS9dehqwli/8TCTgHfcuzw9GDRWAi4CjDIiQRcBSWEckHOMrLCOOjCcfj78Xqa5lTRw0ko/bhfDj6loPj6Lrs5SvPygc4mkHkAkdYHKuw6EQEHNFwtJTRxkdgHJdi6dql0wrKaOfD5ZT0La+tP74Uq67lTu1XVkajD6dT0rccE8cQMkL6AAc4euP45lKsvpY5Nd5AMnQfHgelb3mJ45VYuvbKYxPh8DcofcvgAAc4wAGOoWUE88EnB58c/XFciaVrVx6bCIe/QelbBgc4FBybV2L1tcyp8abB4XBQ+pbnhWPYfyEFBzjA4RvHQD6CyWjGcW/zB7HqWu7UfiP/PIfTKelbDoujrI+QMsAxxs+QgiOmj9V/+tz1fMAx7O+thMax9aNYfS1z6qhBf+PN+3D0LcfHMZyPAJMBxyA+YowFHOV9hJkJOEoSCTaNRhzXYunadch6sQg4B33LM8XRiUjgCYCjG5dZvW8TjsW1WH0tc0ox0rcMDnDkcWwsfhKrruVOKUb6lsEBDnAQOAgcNBKO12IFf7OUjJczAA5ScGy/JhIDB4GDeuH4mUgMHAQOAgeBg8boH2YL7jI89OK6AAAAAElFTkSuQmCC" />
+  <title>星际洪都·机甲远征 NCH-0791 | 三年级趣味奥数</title>
+  <meta name="description" content="专为江西南昌三年级孩子设计的科幻机甲建造与可视化奥数闯关应用" />
+  <style>
+    /* Self-Contained Offline & Domestic 5G Instant CSS Bundle (Zero External CDN) */
+    button, input { font: inherit; color: inherit; background: none; border: none; padding: 0; margin: 0; cursor: pointer; }
+    svg { display: block; }
+    h1, h2, h3, p { margin: 0; }
+    .-translate-x-1\/2 { transform: translateX(-50%); }
+    .absolute { position: absolute; }
+    .active\:scale-95:active { transform: scale(0.95); }
+    .backdrop-blur { -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+    .backdrop-blur-xs { -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+    .bg-\[\#064E3B\] { background-color: #064E3B; }
+    .bg-\[\#065F46\] { background-color: #065F46; }
+    .bg-\[\#09101E\] { background-color: #09101E; }
+    .bg-\[\#0A1120\]\/95 { background-color: rgba(10, 17, 32, 0.95); }
+    .bg-\[\#0B1324\] { background-color: #0B1324; }
+    .bg-\[\#0B1324\]\/95 { background-color: rgba(11, 19, 36, 0.95); }
+    .bg-\[\#0B1426\] { background-color: #0B1426; }
+    .bg-\[\#0C1526\] { background-color: #0C1526; }
+    .bg-\[\#0D1628\] { background-color: #0D1628; }
+    .bg-\[\#0D1729\] { background-color: #0D1729; }
+    .bg-\[\#0D182C\] { background-color: #0D182C; }
+    .bg-\[\#0EA5E9\] { background-color: #0EA5E9; }
+    .bg-\[\#0F223A\] { background-color: #0F223A; }
+    .bg-\[\#0F243D\] { background-color: #0F243D; }
+    .bg-\[\#0F2942\] { background-color: #0F2942; }
+    .bg-\[\#10233D\] { background-color: #10233D; }
+    .bg-\[\#10B981\] { background-color: #10B981; }
+    .bg-\[\#111D33\] { background-color: #111D33; }
+    .bg-\[\#12263F\] { background-color: #12263F; }
+    .bg-\[\#131F36\] { background-color: #131F36; }
+    .bg-\[\#13223B\] { background-color: #13223B; }
+    .bg-\[\#142138\] { background-color: #142138; }
+    .bg-\[\#142541\] { background-color: #142541; }
+    .bg-\[\#15243E\] { background-color: #15243E; }
+    .bg-\[\#16243D\] { background-color: #16243D; }
+    .bg-\[\#162847\] { background-color: #162847; }
+    .bg-\[\#163459\] { background-color: #163459; }
+    .bg-\[\#172642\] { background-color: #172642; }
+    .bg-\[\#1A2D4D\] { background-color: #1A2D4D; }
+    .bg-\[\#1A2E4C\] { background-color: #1A2E4C; }
+    .bg-\[\#1B2D4E\] { background-color: #1B2D4E; }
+    .bg-\[\#1D3154\] { background-color: #1D3154; }
+    .bg-\[\#1E293B\] { background-color: #1E293B; }
+    .bg-\[\#1E2F4F\] { background-color: #1E2F4F; }
+    .bg-\[\#1E3A63\] { background-color: #1E3A63; }
+    .bg-\[\#1F3152\] { background-color: #1F3152; }
+    .bg-\[\#1F3358\] { background-color: #1F3358; }
+    .bg-\[\#263F6B\] { background-color: #263F6B; }
+    .bg-\[\#2D1F12\] { background-color: #2D1F12; }
+    .bg-\[\#334155\] { background-color: #334155; }
+    .bg-\[\#3B2314\] { background-color: #3B2314; }
+    .bg-\[\#F59E0B\] { background-color: #F59E0B; }
+    .bg-\[\#FBBF24\] { background-color: #FBBF24; }
+    .bg-amber-900 { background-color: #78350F; }
+    .bg-amber-950\/50 { background-color: rgba(69, 26, 3, 0.5); }
+    .bg-amber-950\/70 { background-color: rgba(69, 26, 3, 0.7); }
+    .bg-black\/75 { background-color: rgba(0, 0, 0, 0.75); }
+    .bg-emerald-950\/50 { background-color: rgba(2, 44, 34, 0.5); }
+    .bg-emerald-950\/70 { background-color: rgba(2, 44, 34, 0.7); }
+    .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-from, #0EA5E9), var(--tw-to, #34D399)); }
+    .bg-rose-950 { background-color: #4C0519; }
+    .bg-rose-950\/50 { background-color: rgba(76, 5, 25, 0.5); }
+    .bg-rose-950\/70 { background-color: rgba(76, 5, 25, 0.7); }
+    .bg-sky-950 { background-color: #082F49; }
+    .bg-sky-950\/50 { background-color: rgba(8, 47, 73, 0.5); }
+    .bg-sky-950\/70 { background-color: rgba(8, 47, 73, 0.7); }
+    .border { border-width: 1px; border-style: solid; }
+    .border-2 { border-width: 2px; border-style: solid; }
+    .border-\[\#10B981\] { border-color: #10B981; }
+    .border-\[\#10B981\]\/50 { border-color: rgba(16, 185, 129, 0.5); }
+    .border-\[\#10B981\]\/60 { border-color: rgba(16, 185, 129, 0.6); }
+    .border-\[\#1E3152\] { border-color: #1E3152; }
+    .border-\[\#1E3256\] { border-color: #1E3256; }
+    .border-\[\#1F3152\] { border-color: #1F3152; }
+    .border-\[\#22375B\] { border-color: #22375B; }
+    .border-\[\#22385E\] { border-color: #22385E; }
+    .border-\[\#233759\] { border-color: #233759; }
+    .border-\[\#23385C\] { border-color: #23385C; }
+    .border-\[\#243A60\] { border-color: #243A60; }
+    .border-\[\#243B61\] { border-color: #243B61; }
+    .border-\[\#243B63\] { border-color: #243B63; }
+    .border-\[\#253B63\] { border-color: #253B63; }
+    .border-\[\#263B61\] { border-color: #263B61; }
+    .border-\[\#294069\] { border-color: #294069; }
+    .border-\[\#294370\] { border-color: #294370; }
+    .border-\[\#2A4575\] { border-color: #2A4575; }
+    .border-\[\#2B4878\] { border-color: #2B4878; }
+    .border-\[\#2B4C7E\] { border-color: #2B4C7E; }
+    .border-\[\#2C5282\] { border-color: #2C5282; }
+    .border-\[\#2E4A7A\] { border-color: #2E4A7A; }
+    .border-\[\#2F5282\] { border-color: #2F5282; }
+    .border-\[\#34D399\] { border-color: #34D399; }
+    .border-\[\#365382\] { border-color: #365382; }
+    .border-\[\#36568C\] { border-color: #36568C; }
+    .border-\[\#38BDF8\] { border-color: #38BDF8; }
+    .border-\[\#38BDF8\]\/50 { border-color: rgba(56, 189, 248, 0.5); }
+    .border-\[\#38BDF8\]\/60 { border-color: rgba(56, 189, 248, 0.6); }
+    .border-\[\#3B5584\] { border-color: #3B5584; }
+    .border-\[\#3B598F\] { border-color: #3B598F; }
+    .border-\[\#475569\] { border-color: #475569; }
+    .border-\[\#F59E0B\] { border-color: #F59E0B; }
+    .border-\[\#FBBF24\] { border-color: #FBBF24; }
+    .border-amber-400 { border-color: #FBBF24; }
+    .border-amber-400\/80 { border-color: rgba(251, 191, 36, 0.8); }
+    .border-b { border-bottom-width: 1px; border-bottom-style: solid; }
+    .border-dashed { border-style: dashed; }
+    .border-emerald-500\/60 { border-color: rgba(16, 185, 129, 0.6); }
+    .border-emerald-500\/70 { border-color: rgba(16, 185, 129, 0.7); }
+    .border-rose-500 { border-color: #F43F5E; }
+    .border-rose-500\/60 { border-color: rgba(244, 63, 94, 0.6); }
+    .border-rose-500\/70 { border-color: rgba(244, 63, 94, 0.7); }
+    .border-sky-500 { border-color: #0EA5E9; }
+    .border-sky-500\/60 { border-color: rgba(14, 165, 233, 0.6); }
+    .border-sky-500\/70 { border-color: rgba(14, 165, 233, 0.7); }
+    .border-t { border-top-width: 1px; border-top-style: solid; }
+    .bottom-0 { bottom: 0px; }
+    .duration-500 { transition-duration: 500ms; }
+    .fixed { position: fixed; }
+    .flex { display: flex; }
+    .flex-1 { flex: 1 1 0%; }
+    .flex-col { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .font-bold { font-weight: 700; }
+    .font-extrabold { font-weight: 800; }
+    .font-medium { font-weight: 500; }
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .font-semibold { font-weight: 600; }
+    .from-\[\#0EA5E9\] { --tw-from: #0EA5E9; }
+    .from-\[\#F59E0B\] { --tw-from: #F59E0B; }
+    .gap-1 { gap: 0.25rem; }
+    .gap-1\.5 { gap: 0.375rem; }
+    .gap-2 { gap: 0.5rem; }
+    .gap-2\.5 { gap: 0.625rem; }
+    .gap-3 { gap: 0.75rem; }
+    .grid { display: grid; }
+    .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+    .h-1 { height: 0.25rem; }
+    .h-2 { height: 0.5rem; }
+    .h-2\.5 { height: 0.625rem; }
+    .h-20 { height: 5rem; }
+    .h-3 { height: 0.75rem; }
+    .h-40 { height: 10rem; }
+    .h-7 { height: 1.75rem; }
+    .h-8 { height: 2rem; }
+    .h-9 { height: 2.25rem; }
+    .h-full { height: 100%; }
+    .hidden { display: none !important; }
+    .hover\:text-\[\#E2E8F0\]:hover { color: #E2E8F0; }
+    .inline-block { display: inline-block; }
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .justify-around { justify-content: space-around; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .leading-none { line-height: 1; }
+    .leading-relaxed { line-height: 1.625; }
+    .leading-snug { line-height: 1.375; }
+    .left-1\/2 { left: 50%; }
+    .left-3 { left: 0.75rem; }
+    .max-w-\[250px\] { max-width: 250px; }
+    .max-w-\[360px\] { max-width: 360px; }
+    .max-w-\[430px\] { max-width: 430px; }
+    .mb-1 { margin-bottom: 0.25rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-2\.5 { margin-bottom: 0.625rem; }
+    .mb-3 { margin-bottom: 0.75rem; }
+    .mb-3\.5 { margin-bottom: 0.875rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .min-w-0 { min-width: 0px; }
+    .min-w-\[84px\] { min-width: 84px; }
+    .mt-0\.5 { margin-top: 0.125rem; }
+    .mt-1 { margin-top: 0.25rem; }
+    .mt-1\.5 { margin-top: 0.375rem; }
+    .mt-2 { margin-top: 0.5rem; }
+    .mt-2\.5 { margin-top: 0.625rem; }
+    .mt-3 { margin-top: 0.75rem; }
+    .mt-3\.5 { margin-top: 0.875rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .my-1\.5 { margin-top: 0.375rem; margin-bottom: 0.375rem; }
+    .my-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+    .my-2\.5 { margin-top: 0.625rem; margin-bottom: 0.625rem; }
+    .my-3 { margin-top: 0.75rem; margin-bottom: 0.75rem; }
+    .my-4 { margin-top: 1rem; margin-bottom: 1rem; }
+    .opacity-45 { opacity: 0.45; }
+    .opacity-80 { opacity: 0.8; }
+    .overflow-hidden { overflow: hidden; }
+    .overflow-visible { overflow: visible; }
+    .overflow-y-auto { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+    .p-1 { padding: 0.25rem; }
+    .p-2 { padding: 0.5rem; }
+    .p-2\.5 { padding: 0.625rem; }
+    .p-3 { padding: 0.75rem; }
+    .p-3\.5 { padding: 0.875rem; }
+    .p-4 { padding: 1rem; }
+    .p-5 { padding: 1.25rem; }
+    .pb-1 { padding-bottom: 0.25rem; }
+    .pb-24 { padding-bottom: 6rem; }
+    .pb-6 { padding-bottom: 1.5rem; }
+    .pt-1 { padding-top: 0.25rem; }
+    .pt-2 { padding-top: 0.5rem; }
+    .pt-2\.5 { padding-top: 0.625rem; }
+    .pt-3 { padding-top: 0.75rem; }
+    .px-0\.5 { padding-left: 0.125rem; padding-right: 0.125rem; }
+    .px-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+    .px-1\.5 { padding-left: 0.375rem; padding-right: 0.375rem; }
+    .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+    .px-2\.5 { padding-left: 0.625rem; padding-right: 0.625rem; }
+    .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+    .px-3\.5 { padding-left: 0.875rem; padding-right: 0.875rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+    .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+    .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    .py-3\.5 { padding-top: 0.875rem; padding-bottom: 0.875rem; }
+    .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .relative { position: relative; }
+    .right-3 { right: 0.75rem; }
+    .right-4 { right: 1rem; }
+    .rounded { border-radius: 0.25rem; }
+    .rounded-2xl { border-radius: 1rem; }
+    .rounded-full { border-radius: 9999px; }
+    .rounded-l-lg { border-top-left-radius: 0.5rem; border-bottom-left-radius: 0.5rem; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .rounded-r-lg { border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; }
+    .rounded-xl { border-radius: 0.75rem; }
+    .shadow-inner { box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.25); }
+    .shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); }
+    .shrink-0 { flex-shrink: 0; }
+    .space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem; }
+    .space-y-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.375rem; }
+    .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
+    .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.625rem; }
+    .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+    .sticky { position: sticky; }
+    .tabular-nums { font-variant-numeric: tabular-nums; }
+    .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+    .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .text-\[\#0B1220\] { color: #0B1220; }
+    .text-\[\#34D399\] { color: #34D399; }
+    .text-\[\#38BDF8\] { color: #38BDF8; }
+    .text-\[\#64748B\] { color: #64748B; }
+    .text-\[\#94A3B8\] { color: #94A3B8; }
+    .text-\[\#A7F3D0\] { color: #A7F3D0; }
+    .text-\[\#BAE6FD\] { color: #BAE6FD; }
+    .text-\[\#CBD5E1\] { color: #CBD5E1; }
+    .text-\[\#E0F2FE\] { color: #E0F2FE; }
+    .text-\[\#E2E8F0\] { color: #E2E8F0; }
+    .text-\[\#F8FAFC\] { color: #F8FAFC; }
+    .text-\[\#FBBF24\] { color: #FBBF24; }
+    .text-\[\#FDA4AF\] { color: #FDA4AF; }
+    .text-\[\#FDE68A\] { color: #FDE68A; }
+    .text-\[10px\] { font-size: 10px; }
+    .text-\[11px\] { font-size: 11px; }
+    .text-amber-200 { color: #FDE68A; }
+    .text-base { font-size: 1rem; line-height: 1.5rem; }
+    .text-center { text-align: center; }
+    .text-emerald-200 { color: #A7F3D0; }
+    .text-left { text-align: left; }
+    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    .text-right { text-align: right; }
+    .text-rose-200 { color: #FECDD3; }
+    .text-sky-200 { color: #BAE6FD; }
+    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+    .text-white { color: #FFFFFF; }
+    .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+    .text-xs { font-size: 0.75rem; line-height: 1rem; }
+    .to-\[\#34D399\] { --tw-to: #34D399; }
+    .top-0 { top: 0px; }
+    .top-1 { top: 0.25rem; }
+    .top-6 { top: 1.5rem; }
+    .tracking-wide { letter-spacing: 0.025em; }
+    .tracking-wider { letter-spacing: 0.05em; }
+    .transition-all { transition: all 0.2s ease; }
+    .transition-colors { transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+    .transition-transform { transition: transform 0.12s ease; }
+    .translate-x-2 { transform: translateX(0.5rem); }
+    .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .w-10 { width: 2.5rem; }
+    .w-12 { width: 3rem; }
+    .w-16 { width: 4rem; }
+    .w-2 { width: 0.5rem; }
+    .w-2\.5 { width: 0.625rem; }
+    .w-20 { width: 5rem; }
+    .w-3 { width: 0.75rem; }
+    .w-7 { width: 1.75rem; }
+    .w-8 { width: 2rem; }
+    .w-9 { width: 2.25rem; }
+    .w-full { width: 100%; }
+    .z-10 { z-index: 10; }
+    .z-30 { z-index: 30; }
+    .z-50 { z-index: 50; }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #070C16;
+      color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      min-height: 100%;
+      overscroll-behavior-y: contain;
+    }
+
+    /* Mobile Portrait Hangar Shell */
+    .app-shell {
+      width: 100%;
+      max-width: 430px;
+      min-height: 100vh;
+      min-height: 100dvh;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #0B1324 0%, #0F1A30 55%, #0A1120 100%);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid #1E2E4A;
+      border-right: 1px solid #1E2E4A;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.75);
+    }
+
+    /* Tactical Panel Styling */
+    .tac-panel {
+      background: linear-gradient(165deg, #16233B 0%, #111B2E 100%);
+      border: 1px solid #263A5E;
+      border-radius: 14px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .tac-panel-active {
+      background: linear-gradient(165deg, #1B2C4B 0%, #132038 100%);
+      border: 1px solid #F59E0B;
+      box-shadow: inset 0 1px 0 rgba(251, 191, 36, 0.2), 0 6px 20px rgba(245, 158, 11, 0.14);
+    }
+
+    .tac-btn-primary {
+      background: linear-gradient(180deg, #FBBF24 0%, #D97706 100%);
+      color: #0B1220;
+      font-weight: 800;
+      border-radius: 12px;
+      border: 1px solid #FDE68A;
+      box-shadow: 0 4px 0 #92400E, 0 6px 14px rgba(245, 158, 11, 0.3);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    .tac-btn-primary:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #92400E, 0 2px 6px rgba(245, 158, 11, 0.25);
+    }
+
+    .tac-btn-cyan {
+      background: linear-gradient(180deg, #0EA5E9 0%, #0284C7 100%);
+      color: #F8FAFC;
+      font-weight: 700;
+      border-radius: 10px;
+      border: 1px solid #7DD3FC;
+      box-shadow: 0 3px 0 #075985;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      touch-action: manipulation;
+    }
+
+    .tac-btn-cyan:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 #075985;
+    }
+
+    .tac-btn-slate {
+      background: #1B2A46;
+      color: #E2E8F0;
+      font-weight: 700;
+      border-radius: 10px;
+      border: 1px solid #314870;
+      box-shadow: 0 3px 0 #0D1626;
+      transition: transform 0.1s ease, background-color 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    .tac-btn-slate:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 #0D1626;
+      background: #24375B;
+    }
+
+    .numpad-key {
+      background: linear-gradient(180deg, #1E2F4F 0%, #16233C 100%);
+      color: #F8FAFC;
+      font-size: 1.25rem;
+      font-weight: 800;
+      border: 1px solid #304875;
+      border-radius: 10px;
+      box-shadow: 0 3px 0 #0B1220;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+      transition: transform 0.08s ease;
+    }
+
+    .numpad-key:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 #0B1220;
+      background: #29406B;
+    }
+
+    /* Animations */
+    @keyframes floatMecha {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes pulseReactor {
+      0%, 100% { opacity: 0.75; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+
+    @keyframes thrusterFlame {
+      0%, 100% { transform: scaleY(1); opacity: 0.9; }
+      50% { transform: scaleY(1.35); opacity: 1; }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .mecha-hover {
+      animation: floatMecha 3.2s ease-in-out infinite;
+    }
+
+    .mecha-boost {
+      animation: floatMecha 0.55s ease-in-out infinite;
+    }
+
+    .reactor-glow {
+      animation: pulseReactor 2s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .flame-anim {
+      animation: thrusterFlame 0.25s ease-in-out infinite;
+      transform-origin: top center;
+    }
+
+    .modal-pop {
+      animation: popIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Smooth SVG Edge Transitions for Perimeter Stage */
+    .slide-edge {
+      transition: all 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #283C61;
+      border-radius: 4px;
+    }
+
+    /* iPhone Dynamic Island & Bottom Home Indicator Safe Areas */
+    header.ios-safe-header {
+      padding-top: calc(0.625rem + env(safe-area-inset-top, 0px));
+    }
+    nav.ios-safe-nav {
+      padding-bottom: calc(0.375rem + env(safe-area-inset-bottom, 0px));
+    }
+    .pb-24 {
+      padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell" id="app-root">
+    <!-- Top Telemetry Bar -->
+    <header class="ios-safe-header sticky top-0 z-30 px-3.5 py-2.5 bg-[#0B1324]/95 backdrop-blur border-b border-[#1F3152] flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-[#172642] border border-[#365382] flex items-center justify-center text-lg shadow-inner" id="pilot-badge">
+          🧑‍🚀
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <h1 class="text-sm font-extrabold tracking-wide text-[#F8FAFC] leading-none">洪都·星耀号</h1>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#1A2D4D] text-[#38BDF8] border border-[#2B4878]">NCH-0791</span>
+          </div>
+          <p class="text-xs text-[#94A3B8] mt-0.5 leading-none" id="pilot-rank-text">瑶湖母港 · 见习机甲师</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div class="px-2.5 py-1 rounded-lg bg-[#142138] border border-[#294069] flex items-center gap-1 text-xs font-bold text-[#FBBF24]">
+          <span>💎</span>
+          <span id="crystal-count" class="font-mono tabular-nums">120</span>
+        </div>
+        <button id="btn-sound-toggle" onclick="toggleSound()" aria-label="音效开关" class="w-8 h-8 rounded-lg bg-[#142138] border border-[#294069] flex items-center justify-center text-sm text-[#CBD5E1] active:scale-95">
+          🔊
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Dynamic Content Viewport -->
+    <main id="main-viewport" class="flex-1 overflow-y-auto px-3.5 pt-3 pb-24">
+      <!-- Shown ONLY when WeChat/QQ built-in file previewer disables JavaScript; immediately replaced by render() in any browser -->
+      <div class="tac-panel-active p-4 mt-2 space-y-3">
+        <div class="flex items-center gap-2.5">
+          <span class="text-3xl">🛸</span>
+          <div>
+            <h2 class="text-base font-extrabold text-[#FBBF24]">机甲引擎待激活（当前为微信文件预览）</h2>
+            <p class="text-xs text-[#94A3B8] mt-0.5">微信内置文档预览器会锁定游戏按钮与动画</p>
+          </div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-[#0B1324] border border-[#38BDF8]/60 space-y-2.5 text-xs text-[#E2E8F0] leading-relaxed">
+          <div class="text-sm font-extrabold text-[#38BDF8]">⚡ 只需 2 步立即开启完整版：</div>
+          <div>1️⃣ 点击屏幕右上角的 <strong class="text-[#FBBF24]">「 ··· 」</strong> 按钮</div>
+          <div>2️⃣ 选择 <strong class="text-[#FBBF24]">「用其他应用打开」</strong> 👉 选择 <strong class="text-[#34D399]">「浏览器」</strong>（安卓选系统浏览器/Edge/夸克；苹果手机可导入免费 App <strong>Documents / HTML Viewer Q</strong> 打开）</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom Thumb-Friendly Navigation Bar -->
+    <nav id="bottom-nav" class="ios-safe-nav fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-30 bg-[#0A1120]/95 backdrop-blur border-t border-[#1F3152] px-2 py-1.5 grid grid-cols-4 gap-1">
+      <button id="nav-missions" onclick="switchTab('missions')" class="flex flex-col items-center justify-center py-1.5 rounded-xl bg-[#1B2D4E] text-[#FBBF24] border border-[#36568C]">
+        <span class="text-lg leading-none">🚀</span>
+        <span class="text-xs font-bold mt-1">星际闯关</span>
+      </button>
+      <button id="nav-hangar" onclick="switchTab('hangar')" class="flex flex-col items-center justify-center py-1.5 rounded-xl text-[#94A3B8] relative">
+        <span class="text-lg leading-none">🤖</span>
+        <span class="text-xs font-bold mt-1">机甲工坊</span>
+        <span id="hangar-badge" class="hidden absolute top-1 right-4 w-2 h-2 rounded-full bg-[#F59E0B]"></span>
+      </button>
+      <button id="nav-blitz" onclick="switchTab('blitz')" class="flex flex-col items-center justify-center py-1.5 rounded-xl transition-colors">
+        <span class="text-lg leading-none">⚡</span>
+        <span class="text-xs font-bold mt-1">速算充能</span>
+      </button>
+      <button id="nav-parent" onclick="switchTab('parent')" class="flex flex-col items-center justify-center py-1.5 rounded-xl transition-colors">
+        <span class="text-lg leading-none">📊</span>
+        <span class="text-xs font-bold mt-1">指挥档案</span>
+      </button>
+    </nav>
+
+    <!-- Modal Container for Part Drops & Celebrations -->
+    <div id="modal-overlay" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
+      <div id="modal-box" class="w-full max-w-[360px] tac-panel-active p-5 text-center modal-pop"></div>
+    </div>
+  </div>
+
+  <script>
+    /* =========================================================================
+       1. SYNTHESIZED SCI-FI SOUND ENGINE (Zero External Assets, Pure Web Audio)
+       ========================================================================= */
+    let soundEnabled = true;
+    let audioCtx = null;
+
+    function getAudioCtx() {
+      if (!soundEnabled) return null;
+      if (!audioCtx) {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (AC) audioCtx = new AC();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playTone(freq, type = 'sine', duration = 0.12, vol = 0.12, slideTo = null) {
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        if (slideTo) {
+          osc.frequency.exponentialRampToValueAtTime(slideTo, ctx.currentTime + duration);
+        }
+        gain.gain.setValueAtTime(vol, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function sfxTap() { playTone(520, 'triangle', 0.07, 0.09, 680); }
+    function sfxMechSwitch() { playTone(260, 'sawtooth', 0.11, 0.08, 440); }
+    function sfxHint() {
+      playTone(660, 'sine', 0.1, 0.08);
+      setTimeout(() => playTone(880, 'sine', 0.14, 0.08), 90);
+    }
+    function sfxSuccess() {
+      playTone(523.25, 'triangle', 0.12, 0.13);
+      setTimeout(() => playTone(659.25, 'triangle', 0.12, 0.13), 100);
+      setTimeout(() => playTone(783.99, 'triangle', 0.16, 0.14), 200);
+      setTimeout(() => playTone(1046.5, 'sine', 0.32, 0.15), 310);
+    }
+    function sfxRecalibrate() {
+      playTone(300, 'triangle', 0.14, 0.09, 210);
+    }
+    function sfxUnlockPart() {
+      const notes = [440, 554.37, 659.25, 880, 1108.73];
+      notes.forEach((n, idx) => {
+        setTimeout(() => playTone(n, 'triangle', 0.22, 0.14), idx * 85);
+      });
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      document.getElementById('btn-sound-toggle').textContent = soundEnabled ? '🔊' : '🔇';
+      if (soundEnabled) sfxTap();
+    }
+
+    /* =========================================================================
+       2.PERSISTENT STATE & MECHA DATA DEFINITIONS
+       ========================================================================= */
+    const STORAGE_KEY = 'nch0791_mecha_state_v1';
+
+    const MECHA_PARTS = {
+      legs: {
+        id: 'legs',
+        name: '反重力推进战靴',
+        sectorTitle: '瑶湖母港',
+        desc: '内置双涡轮磁悬浮喷口，提供全地形机动能力',
+        icon: '🦿'
+      },
+      torso: {
+        id: 'torso',
+        name: '核聚变星耀胸甲',
+        sectorTitle: '南昌之星环',
+        desc: '搭载 NCH-0791 聚变反应炉，为全身输送澎湃算力',
+        icon: '🛡️'
+      },
+      wings: {
+        id: 'wings',
+        name: '洪都超音速推进翼',
+        sectorTitle: '滕王阁星塔',
+        desc: '源自南昌航空气动布局，实现大气层与深空自由巡航',
+        icon: '🪽'
+      },
+      rightArm: {
+        id: 'rightArm',
+        name: '粒子脉冲集束臂',
+        sectorTitle: '滕王阁星塔',
+        desc: '高精度能量聚焦炮，专门击碎复杂应用题壁垒',
+        icon: '🦾'
+      },
+      leftArm: {
+        id: 'leftArm',
+        name: '赣江矩阵激光盾',
+        sectorTitle: '赣江星桥',
+        desc: '可自由平移展开的力场护盾，万法不侵',
+        icon: '🔰'
+      },
+      head: {
+        id: 'head',
+        name: '星耀指挥官头冠',
+        sectorTitle: '赣江星桥',
+        desc: '战术全息雷达核心，洞察一切隐藏数学规律',
+        icon: '👑'
+      }
+    };
+
+    const LIVERIES = {
+      crimson: {
+        id: 'crimson',
+        name: '赤焰战神',
+        sub: '洪都传奇配色',
+        primary: '#DC2626',
+        secondary: '#F59E0B',
+        panel: '#991B1B',
+        glow: '#38BDF8'
+      },
+      cobalt: {
+        id: 'cobalt',
+        name: '瑶湖深空',
+        sub: '星际巡航配色',
+        primary: '#0284C7',
+        secondary: '#FBBF24',
+        panel: '#075985',
+        glow: '#34D399'
+      },
+      gold: {
+        id: 'gold',
+        name: '流金滕王',
+        sub: '荣耀统帅配色',
+        primary: '#D97706',
+        secondary: '#38BDF8',
+        panel: '#92400E',
+        glow: '#FDE047'
+      }
+    };
+
+    const SECTORS = [
+      {
+        id: 's1',
+        code: 'SECTOR-01',
+        landmark: '南昌·瑶湖星际母港',
+        title: '机甲整备舱之谜',
+        topic: '鸡兔同笼思维（抬腿假设法）',
+        schoolLink: '衔接人教版：混合运算与逻辑推理',
+        estTime: '约 3 分钟 · 共2关',
+        rewards: ['legs'],
+        skillKey: 'assumption',
+        stages: [
+          {
+            id: 's1_1',
+            badge: '第1关 · 互动沙盘破冰',
+            story: '瑶湖母港整备舱里停着【双足侦察机（2条腿）】和【四足重装兽（4条腿）】共 8 台。地面压力传感器测出共有 22 条机械腿。请问有几台【四足重装兽】？',
+            questionShort: '共有几台四足重装兽？',
+            type: 'sandbox_legs',
+            answer: '3',
+            unit: '台',
+            hints: [
+              '📡 雷达扫描：共 8 台机体，总腿数 22 条。先点击下方【① 全员收起后腿（按2条腿算）】试试！',
+              '🛠️ 战术沙盘：8台如果全是2条腿，只有 8 × 2 = 16 条腿，还多出 22 - 16 = 6 条腿没装上去！',
+              '💡 决胜一步：每点击1台机甲给它加装 +2 条腿，6 ÷ 2 = 3 台！快点满3台四足兽吧！'
+            ],
+            successNote: '太稳了！不用死背公式：先假设全是2条腿（16条），多出的6条腿每2条升1台四足兽，6 ÷ 2 = 3台！'
+          },
+          {
+            id: 's1_2',
+            badge: '第2关 · 实战举一反三',
+            story: '补给舰向瑶湖母港运来【双核电池（2格电）】和【五核电池（5格电）】共 6 块，总电量刚好是 21 格。请问其中有几块【五核电池】？',
+            questionShort: '共有几块五核电池？',
+            type: 'sandbox_battery',
+            answer: '3',
+            unit: '块',
+            hints: [
+              '📡 关键信息：一共 6 块电池，每块五核比双核多出 5 - 2 = 3 格电！',
+              '🛠️ 模拟推演：先让 6 块全按双核（2格）算，电量是 6 × 2 = 12 格，还差 21 - 12 = 9 格电！',
+              '💡 决胜一步：每升级1块五核能补上 +3 格电，9 ÷ 3 = 3 块！点击下方电池试试看！'
+            ],
+            successNote: '漂亮！从“机械腿”到“电池电量”，底层都是同一个模型：先按小的统一算，再用总差额 ÷ 单个差额！'
+          }
+        ]
+      },
+      {
+        id: 's2',
+        code: 'SECTOR-02',
+        landmark: '赣江·南昌之星轨道环',
+        title: '旋转充能舱规律',
+        topic: '周期与余数妙用（分箱打包法）',
+        schoolLink: '衔接人教版：有余数的除法进阶',
+        estTime: '约 3 分钟 · 共2关',
+        rewards: ['torso'],
+        skillKey: 'cycle',
+        stages: [
+          {
+            id: 's2_1',
+            badge: '第1关 · 互动沙盘破冰',
+            story: '“南昌之星”升级成了太空轨道充能环！能量舱按【🔥红焰 → ⚡蓝电 → 🛡️金盾 → 🌿绿芒】4种属性不断循环排列。第1号舱是🔥红焰，请问第 19 号舱是什么属性？',
+            questionShort: '点击选择第 19 号舱的属性：',
+            type: 'sandbox_cycle_wheel',
+            answer: '金盾',
+            choices: [
+              { val: '红焰', label: '🔥 红焰舱', color: 'border-rose-500/70 bg-rose-950/50 text-rose-200' },
+              { val: '蓝电', label: '⚡ 蓝电舱', color: 'border-sky-500/70 bg-sky-950/50 text-sky-200' },
+              { val: '金盾', label: '🛡️ 金盾舱', color: 'border-amber-400/80 bg-amber-950/50 text-amber-200' },
+              { val: '绿芒', label: '🌿 绿芒舱', color: 'border-emerald-500/70 bg-emerald-950/50 text-emerald-200' }
+            ],
+            hints: [
+              '📡 寻找周期：红、蓝、金、绿，每 4 个能量舱为一整组不断重复！点击【每4舱打包成组】看看！',
+              '🛠️ 分箱扫描：19 ÷ 4 = 4 组 …… 余下 3 个舱（第17、18、19号）！',
+              '💡 决胜一步：余1是红焰，余2是蓝电，余3对应的正好是第3个——🛡️金盾！'
+            ],
+            successNote: '一眼看穿！做周期题只要“总数 ÷ 每组个数”，余数是几，就按顺序数到组里的第几个（如果整除就是最后一个）！'
+          },
+          {
+            id: 's2_2',
+            badge: '第2关 · 实战举一反三',
+            story: '星际巡逻队按【1台先锋机、2台护卫机、2台支援机】的固定队形依次出港。前 22 台出港的机甲里，一共有多少台【护卫机】？',
+            questionShort: '前 22 台里共有几台护卫机？',
+            type: 'sandbox_fleet_cycle',
+            answer: '9',
+            unit: '台',
+            hints: [
+              '📡 小心审题：这次不是问第22台是谁，而是问一共出现了多少台【护卫机】哦！每组共有 1+2+2 = 5 台。',
+              '🛠️ 编队打包：点击【展开编队矩阵】！22 ÷ 5 = 4 整组 …… 还余下最后 2 台机甲。',
+              '💡 决胜一步：4整组里有 4 × 2 = 8 台护卫机；余下的2台依次是“先锋、护卫”，又多1台！8 + 1 = 9 台！'
+            ],
+            successNote: '王牌洞察力！先算完整组里的数量（4×2=8），再看余数尾巴里藏着几台（+1），周期难题彻底拿捏！'
+          }
+        ]
+      },
+      {
+        id: 's3',
+        code: 'SECTOR-03',
+        landmark: '滕王阁·星际指挥塔',
+        title: '超导晶石调配令',
+        topic: '和倍与和差问题（线段图建模）',
+        schoolLink: '衔接人教版：倍的认识与万以内加减',
+        estTime: '约 4 分钟 · 共2关',
+        rewards: ['wings', 'rightArm'],
+        skillKey: 'barmodel',
+        stages: [
+          {
+            id: 's3_1',
+            badge: '第1关 · 互动沙盘破冰',
+            story: '滕王阁星塔的主库与副库一共储存了 24 颗超导晶石，主库的晶石数量正好是副库的 3 倍。请问【主库】里有多少颗超导晶石？',
+            questionShort: '主库有多少颗超导晶石？',
+            type: 'sandbox_sum_multiple',
+            answer: '18',
+            unit: '颗',
+            hints: [
+              '📡 找准1倍量：副库少，把副库看作【1份】；主库是它的3倍，在沙盘里把主库拼成【3份】！',
+              '🛠️ 均分晶石：主库(3份) + 副库(1份) = 一共 4 等份！把 24 颗晶石平均装进 4 份，每份是 24 ÷ 4 = 6 颗！',
+              '💡 决胜一步：看清题目问的是【主库】哦！主库有 3 份，6 × 3 = 18 颗！'
+            ],
+            successNote: '这就是奥数第一神器“线段图”！遇到“和倍问题”，把1倍和几倍合起来看一共有几份，一除就出每份数！'
+          },
+          {
+            id: 's3_2',
+            badge: '第2关 · 实战举一反三',
+            story: '星耀号左翼与右翼推进器一共输出 26 兆瓦推力，其中左翼比右翼多输出 4 兆瓦。请问推力更强的【左翼】输出多少兆瓦？',
+            questionShort: '左翼推进器输出多少兆瓦？',
+            type: 'sandbox_sum_diff',
+            answer: '15',
+            unit: '兆瓦',
+            hints: [
+              '📡 一长一短不好平分怎么办？点击沙盘里的【⚡ 激光切去多出的 4 兆瓦】试试！',
+              '🛠️ 去多补齐：从总和 26 里切掉多出的 4，剩下 26 - 4 = 22 兆瓦，这时左右两翼一样长啦！',
+              '💡 决胜一步：右翼是 22 ÷ 2 = 11 兆瓦，别忘了把刚切掉的 4 装回左翼：11 + 4 = 15 兆瓦！'
+            ],
+            successNote: '双部件解锁！“去多法”让两边一样长再平分，以后再大的和差问题都难不倒你！'
+          }
+        ]
+      },
+      {
+        id: 's4',
+        code: 'SECTOR-04',
+        landmark: '赣江星桥·激光防御阵',
+        title: '护盾周长与防线',
+        topic: '巧求周长平移法 & 植树间隔',
+        schoolLink: '衔接人教版：长方形和正方形周长',
+        estTime: '约 4 分钟 · 共2关',
+        rewards: ['leftArm', 'head'],
+        skillKey: 'spatial',
+        stages: [
+          {
+            id: 's4_1',
+            badge: '第1关 · 互动沙盘破冰',
+            story: '工程师为赣江星桥打造了一块“阶梯形”力场护盾，底边宽 10 米，左边高 8 米，右上角凹进去两级台阶（没标小段长度）。围这面护盾一圈需要多少米激光封边条？',
+            questionShort: '护盾的周长一共是多少米？',
+            type: 'sandbox_perimeter',
+            answer: '36',
+            unit: '米',
+            hints: [
+              '📡 没给小台阶长度也能算？当然！快点击沙盘上的【⬆ 平移横边】和【➡ 平移竖边】按钮！',
+              '🛠️ 神奇变形：凹进去的横边向上推、竖边向右推，竟然严丝合缝拼成了宽10米、高8米的完整长方形！',
+              '💡 决胜一步：长方形周长 = (长 + 宽) × 2 = (10 + 8) × 2 = 36 米！'
+            ],
+            successNote: '太丝滑了！遇到阶梯形拐角，用“平移大法”一推就变标准长方形，根本不需要知道小台阶有多长！'
+          },
+          {
+            id: 's4_2',
+            badge: '第2关 · 终极合体觉醒',
+            story: '在长 30 米的赣江星桥防线上，每隔 5 米安装一座激光防御塔（注意：起点 0米处 和终点 30米处 两端都要安装！）。一共需要安装几座激光塔？',
+            questionShort: '一共需要安装几座激光塔？',
+            type: 'sandbox_trees',
+            answer: '7',
+            unit: '座',
+            hints: [
+              '📡 经典易错点预警：30 ÷ 5 = 6，算出的是“有 6 段间隔”，可不是塔的数量哦！点击【点亮防线激光塔】数一数！',
+              '🛠️ 眼见为实：0米立第1座，之后每段末尾立1座（5m、10m、15m、20m、25m、30m）！',
+              '💡 决胜一步：两端都装时，塔数 = 间隔数 + 1 = 6 + 1 = 7 座！'
+            ],
+            successNote: '全星域通关！牢记“手指数与指缝数”：两端都种，棵数比段数多1！洪都·星耀号 NCH-0791 全装觉醒！'
+          }
+        ]
+      }
+    ];
+
+    // Quick-Calc Blitz Bank (Grade 3 Olympiad Clever Calculation Tricks)
+    const BLITZ_QUESTIONS = [
+      { expr: '198 + 57', tip: '把 198 看成 200，先算 200 + 57 = 257，再减去多加的 2！', options: ['255', '259', '245', '265'], ans: '255' },
+      { expr: '25 × 16', tip: '黄金搭档 25 × 4 = 100！把 16 拆成 4 × 4，即 100 × 4！', options: ['360', '400', '420', '320'], ans: '400' },
+      { expr: '364 - 98', tip: '先减整百 364 - 100 = 264，多减了 2 要加回来：+ 2！', options: ['262', '266', '276', '256'], ans: '266' },
+      { expr: '46 + 79 + 54', tip: '凑整好朋友先牵手：(46 + 54) + 79 = 100 + 79！', options: ['169', '179', '189', '175'], ans: '179' },
+      { expr: '125 × 8 × 3', tip: '超级搭档 125 × 8 = 1000！再乘 3 秒出答案！', options: ['2400', '3000', '3200', '1003'], ans: '3000' },
+      { expr: '200 - 43 - 57', tip: '连续减两个数 = 减去它们的和：200 - (43 + 57)！', options: ['100', '110', '90', '104'], ans: '100' },
+      { expr: '99 + 99 + 2', tip: '把后面的 2 拆成 1 + 1 分给两个 99，瞬间变成 100 + 100！', options: ['198', '200', '202', '199'], ans: '200' },
+      { expr: '15 × 6', tip: '双倍折半法：15 × 2 × 3 = 30 × 3！', options: ['80', '90', '75', '95'], ans: '90' }
+    ];
+
+    const defaultState = {
+      activeTab: 'missions',
+      crystals: 120,
+      completedStages: {}, // e.g., { s1_1: true }
+      unlockedParts: [],   // e.g., ['legs']
+      livery: 'cobalt',
+      previewFullMecha: false,
+      boostActive: false,
+      hintsUsedCount: 0,
+      blitzBestScore: 0,
+      sessionsCompleted: 0,
+      hasNewPartBadge: false
+    };
+
+    let state = loadState();
+
+    // Active Mission Runtime State (not persisted)
+    let missionRuntime = {
+      activeSectorId: null,
+      stageIndex: 0,
+      userInput: '',
+      hintLevel: 0,
+      feedbackMsg: '',
+      feedbackType: '', // 'info' | 'warn' | 'ok'
+      // Stage-specific interactive sandbox state
+      legsUnits: [2, 2, 2, 2, 2, 2, 2, 2],
+      legsInitialized: false,
+      batteryUnits: [2, 2, 2, 2, 2, 2],
+      cyclePacked: false,
+      fleetExpanded: false,
+      mainMultipleCount: 1,
+      crystalsDistributed: false,
+      diffCutApplied: false,
+      perimSlideH: false,
+      perimSlideV: false,
+      treesPlanted: [true, false, false, false, false, false, false]
+    };
+
+    // Blitz Mini-Game Runtime State
+    let blitzRuntime = {
+      running: false,
+      timeLeft: 60,
+      score: 0,
+      streak: 0,
+      qIndex: 0,
+      lastTip: '',
+      timerId: null
+    };
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          return Object.assign({}, defaultState, JSON.parse(raw));
+        }
+      } catch (e) {}
+      return JSON.parse(JSON.stringify(defaultState));
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    function getPilotRank() {
+      const count = state.unlockedParts.length;
+      if (count >= 6) return { title: '南昌星港 · 传奇总工程师', badge: '👑' };
+      if (count >= 4) return { title: '滕王星塔 · 王牌机甲统帅', badge: '🎖️' };
+      if (count >= 2) return { title: '南昌之星 · 精英机械师', badge: '🚀' };
+      if (count >= 1) return { title: '瑶湖母港 · 正式机甲师', badge: '🛠️' };
+      return { title: '瑶湖母港 · 见习机甲师', badge: '🧑‍🚀' };
+    }
+
+    function updateHeaderUI() {
+      const rank = getPilotRank();
+      document.getElementById('pilot-rank-text').textContent = rank.title;
+      document.getElementById('pilot-badge').textContent = rank.badge;
+      document.getElementById('crystal-count').textContent = state.crystals;
+
+      const badge = document.getElementById('hangar-badge');
+      if (state.hasNewPartBadge) badge.classList.remove('hidden');
+      else badge.classList.add('hidden');
+
+      ['missions', 'hangar', 'blitz', 'parent'].forEach(tab => {
+        const btn = document.getElementById('nav-' + tab);
+        const active = state.activeTab === tab;
+        btn.className = active
+          ? 'flex flex-col items-center justify-center py-1.5 rounded-xl bg-[#1B2D4E] text-[#FBBF24] border border-[#36568C] relative'
+          : 'flex flex-col items-center justify-center py-1.5 rounded-xl text-[#94A3B8] hover:text-[#E2E8F0] relative';
+      });
+    }
+
+    function switchTab(tab) {
+      sfxTap();
+      if (blitzRuntime.timerId && tab !== 'blitz') {
+        clearInterval(blitzRuntime.timerId);
+        blitzRuntime.timerId = null;
+        blitzRuntime.running = false;
+      }
+      missionRuntime.activeSectorId = null;
+      state.activeTab = tab;
+      if (tab === 'hangar') {
+        state.hasNewPartBadge = false;
+      }
+      saveState();
+      render();
+    }
+
+    /* =========================================================================
+       3. MODULAR SVG MECHA RENDERER (洪都·星耀号 NCH-0791)
+       ========================================================================= */
+    function renderMechaSVG(unlockedList, liveryId, isBoosting = false) {
+      const liv = LIVERIES[liveryId] || LIVERIES.cobalt;
+      const has = (part) => unlockedList.includes(part);
+
+      const wireStroke = '#334E7B';
+      const wireFill = 'rgba(20, 34, 58, 0.45)';
+
+      return `
+      <svg viewBox="0 0 280 300" class="w-full max-w-[250px] mx-auto overflow-visible ${isBoosting ? 'mecha-boost' : 'mecha-hover'}">
+        <defs>
+          <radialGradient id="padGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="${liv.glow}" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="${liv.glow}" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Hangar Base Ring -->
+        <ellipse cx="140" cy="276" rx="88" ry="14" fill="url(#padGlow)" />
+        <ellipse cx="140" cy="276" rx="72" ry="9" fill="none" stroke="#2D4A77" stroke-width="1.5" stroke-dasharray="6 4" />
+
+        <!-- 1. WINGS (洪都超音速推进翼) -->
+        <g id="svg-part-wings">
+          ${has('wings') ? `
+            <polygon points="112,108 26,64 16,96 96,144" fill="${liv.primary}" stroke="#F8FAFC" stroke-width="1.5"/>
+            <polygon points="102,118 32,82 28,94 96,134" fill="${liv.secondary}" />
+            <polygon points="168,108 254,64 264,96 184,144" fill="${liv.primary}" stroke="#F8FAFC" stroke-width="1.5"/>
+            <polygon points="178,118 248,82 252,94 184,134" fill="${liv.secondary}" />
+            ${isBoosting ? `
+              <polygon class="flame-anim" points="42,115 26,158 54,124" fill="#38BDF8" />
+              <polygon class="flame-anim" points="238,115 254,158 226,124" fill="#38BDF8" />
+            ` : ''}
+          ` : `
+            <polygon points="112,108 26,64 16,96 96,144" fill="${wireFill}" stroke="${wireStroke}" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <polygon points="168,108 254,64 264,96 184,144" fill="${wireFill}" stroke="${wireStroke}" stroke-width="1.5" stroke-dasharray="4 3"/>
+          `}
+        </g>
+
+        <!-- 2. LEGS (反重力推进战靴) -->
+        <g id="svg-part-legs">
+          ${has('legs') ? `
+            <!-- Pelvis Skirt -->
+            <polygon points="112,168 168,168 176,188 140,198 104,188" fill="#1E293B" stroke="#94A3B8" stroke-width="1.5"/>
+            <polygon points="132,170 148,170 145,194 135,194" fill="${liv.secondary}"/>
+            <!-- Left Leg -->
+            <rect x="104" y="190" width="26" height="42" rx="5" fill="#CBD5E1" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="98,220 134,220 138,262 94,262" fill="${liv.primary}" stroke="#F8FAFC" stroke-width="1.4"/>
+            <rect x="92" y="256" width="46" height="12" rx="4" fill="#1E293B" stroke="${liv.secondary}" stroke-width="1.4"/>
+            <!-- Right Leg -->
+            <rect x="150" y="190" width="26" height="42" rx="5" fill="#CBD5E1" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="146,220 182,220 186,262 142,262" fill="${liv.primary}" stroke="#F8FAFC" stroke-width="1.4"/>
+            <rect x="142" y="256" width="46" height="12" rx="4" fill="#1E293B" stroke="${liv.secondary}" stroke-width="1.4"/>
+            ${isBoosting ? `
+              <polygon class="flame-anim" points="106,268 115,294 124,268" fill="#FBBF24"/>
+              <polygon class="flame-anim" points="156,268 165,294 174,268" fill="#FBBF24"/>
+            ` : ''}
+          ` : `
+            <polygon points="112,168 168,168 176,188 140,198 104,188" fill="${wireFill}" stroke="${wireStroke}" stroke-dasharray="4 3"/>
+            <rect x="100" y="192" width="32" height="74" rx="5" fill="${wireFill}" stroke="${wireStroke}" stroke-dasharray="4 3"/>
+            <rect x="148" y="192" width="32" height="74" rx="5" fill="${wireFill}" stroke="${wireStroke}" stroke-dasharray="4 3"/>
+          `}
+        </g>
+
+        <!-- 3. TORSO (核聚变星耀胸甲) -->
+        <g id="svg-part-torso">
+          ${has('torso') ? `
+            <polygon points="96,94 184,94 172,168 108,168" fill="${liv.primary}" stroke="#F8FAFC" stroke-width="1.6"/>
+            <polygon points="104,100 132,100 126,136 108,130" fill="${liv.secondary}"/>
+            <polygon points="176,100 148,100 154,136 172,130" fill="${liv.secondary}"/>
+            <!-- NCH-0791 Core Reactor -->
+            <circle cx="140" cy="128" r="16" fill="#0F172A" stroke="#E2E8F0" stroke-width="2"/>
+            <circle class="reactor-glow" cx="140" cy="128" r="10" fill="${liv.glow}"/>
+            <text x="140" y="160" text-anchor="middle" fill="#F8FAFC" font-size="8" font-family="monospace" font-weight="bold">0791</text>
+          ` : `
+            <polygon points="96,94 184,94 172,168 108,168" fill="${wireFill}" stroke="${wireStroke}" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <circle cx="140" cy="128" r="13" fill="none" stroke="${wireStroke}" stroke-dasharray="3 3"/>
+          `}
+        </g>
+
+        <!-- 4. RIGHT ARM - Viewer Left (粒子脉冲集束臂) -->
+        <g id="svg-part-rightArm">
+          ${has('rightArm') ? `
+            <polygon points="68,92 98,94 94,124 64,118" fill="${liv.panel}" stroke="#F8FAFC" stroke-width="1.4"/>
+            <rect x="68" y="122" width="22" height="36" rx="5" fill="#E2E8F0" stroke="#475569" stroke-width="1.4"/>
+            <!-- Pulse Cannon Barrel -->
+            <rect x="62" y="152" width="32" height="36" rx="6" fill="${liv.primary}" stroke="#F8FAFC" stroke-width="1.4"/>
+            <circle cx="78" cy="186" r="8" fill="#0F172A" stroke="${liv.glow}" stroke-width="2"/>
+            <circle class="reactor-glow" cx="78" cy="186" r="4.5" fill="${liv.glow}"/>
+          ` : `
+            <rect x="64" y="94" width="30" height="92" rx="6" fill="${wireFill}" stroke="${wireStroke}" stroke-dasharray="4 3"/>
+          `}
+        </g>
+
+        <!-- 5. LEFT ARM - Viewer Right (赣江矩阵激光盾) -->
+        <g id="svg-part-leftArm">
+          ${has('leftArm') ? `
+            <polygon points="182,94 212,92 216,118 186,124" fill="${liv.panel}" stroke="#F8FAFC" stroke-width="1.4"/>
+            <rect x="190" y="122" width="22" height="42" rx="5" fill="#E2E8F0" stroke="#475569" stroke-width="1.4"/>
+            <!-- Energy Shield -->
+            <polygon points="204,108 238,118 232,192 204,204 196,156" fill="${liv.primary}" stroke="#F8FAFC" stroke-width="1.5"/>
+            <polygon points="210,120 230,126 226,182 210,190" fill="${liv.glow}" fill-opacity="0.38" stroke="${liv.glow}" stroke-width="1.2"/>
+          ` : `
+            <rect x="186" y="94" width="30" height="86" rx="6" fill="${wireFill}" stroke="${wireStroke}" stroke-dasharray="4 3"/>
+            <polygon points="206,112 236,120 230,190 206,198" fill="${wireFill}" stroke="${wireStroke}" stroke-dasharray="4 3"/>
+          `}
+        </g>
+
+        <!-- 6. HEAD (星耀指挥官头冠) -->
+        <g id="svg-part-head">
+          ${has('head') ? `
+            <rect x="122" y="54" width="36" height="36" rx="7" fill="#F8FAFC" stroke="#475569" stroke-width="1.5"/>
+            <!-- Visor Eyes -->
+            <polygon points="126,70 138,73 138,78 126,76" fill="${liv.glow}"/>
+            <polygon points="154,70 142,73 142,78 154,76" fill="${liv.glow}"/>
+            <!-- V-Fin Antenna Crest -->
+            <polygon points="140,62 104,34 114,48 140,68 166,48 176,34" fill="${liv.secondary}" stroke="#FEF08A" stroke-width="1"/>
+            <rect x="136" y="46" width="8" height="14" rx="2" fill="${liv.primary}"/>
+          ` : `
+            <rect x="122" y="54" width="36" height="36" rx="7" fill="${wireFill}" stroke="${wireStroke}" stroke-dasharray="4 3"/>
+            <polygon points="140,62 108,38 140,66 172,38" fill="none" stroke="${wireStroke}" stroke-dasharray="3 3"/>
+          `}
+        </g>
+      </svg>`;
+    }
+
+    /* =========================================================================
+       4. MAIN VIEW ROUTER
+       ========================================================================= */
+    function render() {
+      updateHeaderUI();
+      const vp = document.getElementById('main-viewport');
+
+      if (missionRuntime.activeSectorId) {
+        document.getElementById('bottom-nav').classList.add('hidden');
+        vp.classList.remove('pb-24');
+        vp.classList.add('pb-6');
+        vp.innerHTML = renderActiveStageView();
+        return;
+      } else {
+        document.getElementById('bottom-nav').classList.remove('hidden');
+        vp.classList.add('pb-24');
+        vp.classList.remove('pb-6');
+      }
+
+      if (state.activeTab === 'missions') {
+        vp.innerHTML = renderMissionsTab();
+      } else if (state.activeTab === 'hangar') {
+        vp.innerHTML = renderHangarTab();
+      } else if (state.activeTab === 'blitz') {
+        vp.innerHTML = renderBlitzTab();
+      } else if (state.activeTab === 'parent') {
+        vp.innerHTML = renderParentTab();
+      }
+    }
+
+    /* =========================================================================
+       5. TAB 1: MISSIONS HUB (星际闯关 - 手机竖屏碎片双关制)
+       ========================================================================= */
+    function renderMissionsTab() {
+      const unlockedCount = state.unlockedParts.length;
+      const pct = Math.round((unlockedCount / 6) * 100);
+
+      let cardsHtml = SECTORS.map((sec, idx) => {
+        const s1Done = !!state.completedStages[sec.stages[0].id];
+        const s2Done = !!state.completedStages[sec.stages[1].id];
+        const allDone = s1Done && s2Done;
+        const rewardNames = sec.rewards.map(r => `${MECHA_PARTS[r].icon} ${MECHA_PARTS[r].name}`).join(' + ');
+
+        return `
+          <div class="${allDone ? 'tac-panel border-[#10B981]/60' : 'tac-panel'} p-3.5 relative overflow-hidden">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-[#1D3154] text-[#38BDF8]">${sec.code}</span>
+                  <span class="text-xs font-semibold text-[#FBBF24]">📍 ${sec.landmark}</span>
+                </div>
+                <h3 class="text-base font-extrabold text-[#F8FAFC] mt-1.5">${sec.title}</h3>
+                <p class="text-xs text-[#CBD5E1] mt-0.5">🎯 奥数思维：${sec.topic}</p>
+              </div>
+              <div class="shrink-0 text-right">
+                <span class="inline-block text-xs font-bold px-2 py-1 rounded-lg ${allDone ? 'bg-[#064E3B] text-[#34D399] border border-[#10B981]/50' : 'bg-[#1F3152] text-[#E2E8F0]'}">
+                  ${allDone ? '✅ 已通关' : `${(s1Done ? 1 : 0) + (s2Done ? 1 : 0)} / 2 关`}
+                </span>
+              </div>
+            </div>
+
+            <div class="mt-2.5 pt-2.5 border-t border-[#233759] flex items-center justify-between gap-2">
+              <div class="text-xs text-[#94A3B8] leading-snug">
+                <div>掉落部件：<span class="text-[#FDE68A] font-semibold">${rewardNames}</span></div>
+                <div class="text-[11px] text-[#64748B] mt-0.5">⏱️ ${sec.estTime} · ${sec.schoolLink}</div>
+              </div>
+              <button onclick="startSector('${sec.id}')" class="${allDone ? 'tac-btn-slate px-3.5 py-2 text-xs' : 'tac-btn-primary px-4 py-2 text-xs'} shrink-0">
+                ${allDone ? '重温沙盘' : (s1Done ? '继续第2关' : '立即出击')}
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <!-- Compact Mecha Status Banner -->
+        <section class="tac-panel p-3.5 mb-3.5 flex items-center gap-3">
+          <div class="w-20 h-20 shrink-0 rounded-xl bg-[#0B1426] border border-[#243A60] flex items-center justify-center p-1 overflow-hidden" onclick="switchTab('hangar')">
+            ${renderMechaSVG(state.unlockedParts, state.livery, false)}
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-[#38BDF8]">机甲合体进度</span>
+              <span class="text-xs font-mono font-bold text-[#FBBF24]">${unlockedCount}/6 部件 (${pct}%)</span>
+            </div>
+            <div class="w-full h-2.5 bg-[#0B1324] rounded-full overflow-hidden border border-[#243A60] mt-1.5">
+              <div class="h-full bg-gradient-to-r from-[#F59E0B] to-[#34D399] transition-all duration-500" style="width: ${Math.max(pct, 6)}%"></div>
+            </div>
+            <p class="text-xs text-[#CBD5E1] mt-2 leading-relaxed">
+              ${unlockedCount === 0
+                ? '👋 欢迎来到南昌瑶湖母港！任选下方星域，每次只需玩 2 关即可拼装新机甲部件！'
+                : unlockedCount < 6
+                  ? '🔥 状态极佳！继续探索星域，集齐 6 大核心部件唤醒终极形态！'
+                  : '🏆 NCH-0791 已满配觉醒！可前往【机甲工坊】切换涂装或挑战【速算充能】！'}
+            </p>
+          </div>
+        </section>
+
+        <div class="flex items-center justify-between mb-2.5 px-0.5">
+          <h2 class="text-sm font-extrabold text-[#F8FAFC] tracking-wide">🌌 南昌四大星域任务（每局2关）</h2>
+          <span class="text-xs text-[#94A3B8]">点击即玩 · 零公式画图破冰</span>
+        </div>
+
+        <div class="space-y-3">
+          ${cardsHtml}
+        </div>
+      `;
+    }
+
+    /* =========================================================================
+       6. ACTIVE STAGE & INTERACTIVE VISUAL SANDBOXES
+       ========================================================================= */
+    function startSector(sectorId) {
+      sfxTap();
+      const sec = SECTORS.find(s => s.id === sectorId);
+      if (!sec) return;
+      const s1Done = !!state.completedStages[sec.stages[0].id];
+      const s2Done = !!state.completedStages[sec.stages[1].id];
+      const startIdx = (s1Done && !s2Done) ? 1 : 0;
+      initStageRuntime(sectorId, startIdx);
+      render();
+    }
+
+    function initStageRuntime(sectorId, stageIndex) {
+      missionRuntime = {
+        activeSectorId: sectorId,
+        stageIndex: stageIndex,
+        userInput: '',
+        hintLevel: 0,
+        feedbackMsg: '',
+        feedbackType: '',
+        legsUnits: [2, 2, 2, 2, 2, 2, 2, 2],
+        legsInitialized: false,
+        batteryUnits: [2, 2, 2, 2, 2, 2],
+        cyclePacked: false,
+        fleetExpanded: false,
+        mainMultipleCount: 1,
+        crystalsDistributed: false,
+        diffCutApplied: false,
+        perimSlideH: false,
+        perimSlideV: false,
+        treesPlanted: [true, false, false, false, false, false, false]
+      };
+    }
+
+    function exitMission() {
+      sfxTap();
+      missionRuntime.activeSectorId = null;
+      render();
+    }
+
+    function renderActiveStageView() {
+      const sec = SECTORS.find(s => s.id === missionRuntime.activeSectorId);
+      const stage = sec.stages[missionRuntime.stageIndex];
+
+      return `
+        <!-- Stage Top Header -->
+        <div class="flex items-center justify-between mb-2.5">
+          <button onclick="exitMission()" class="tac-btn-slate px-3 py-1.5 text-xs flex items-center gap-1">
+            <span>←</span><span>返回星域</span>
+          </button>
+          <div class="flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full ${missionRuntime.stageIndex === 0 ? 'bg-[#FBBF24]' : 'bg-[#10B981]'}"></span>
+            <span class="text-xs font-bold text-[#E2E8F0]">${stage.badge}</span>
+            <span class="w-2.5 h-2.5 rounded-full ${missionRuntime.stageIndex === 1 ? 'bg-[#FBBF24]' : 'bg-[#334155]'}"></span>
+          </div>
+          <button onclick="triggerRadarHint()" class="tac-btn-cyan px-2.5 py-1.5 text-xs flex items-center gap-1">
+            <span>📡</span><span>提示(${missionRuntime.hintLevel}/3)</span>
+          </button>
+        </div>
+
+        <!-- Story Briefing Card -->
+        <div class="tac-panel p-3.5 mb-3">
+          <div class="flex items-center justify-between text-xs text-[#38BDF8] font-bold mb-1">
+            <span>📍 ${sec.landmark}</span>
+            <span>${sec.topic}</span>
+          </div>
+          <p class="text-sm text-[#F8FAFC] leading-relaxed font-medium">${stage.story}</p>
+        </div>
+
+        <!-- Radar Hint Drawer (if requested) -->
+        ${missionRuntime.hintLevel > 0 ? `
+          <div class="mb-3 p-3 rounded-xl bg-[#0F2942] border border-[#38BDF8]/60 space-y-1.5 text-xs text-[#E0F2FE]">
+            ${stage.hints.slice(0, missionRuntime.hintLevel).map(h => `<div class="leading-relaxed">${h}</div>`).join('')}
+          </div>
+        ` : ''}
+
+        <!-- Interactive Visual Sandbox -->
+        <div class="tac-panel p-3.5 mb-3">
+          ${renderStageSandbox(stage)}
+        </div>
+
+        <!-- Feedback Banner -->
+        ${missionRuntime.feedbackMsg ? `
+          <div class="mb-3 px-3.5 py-2.5 rounded-xl text-xs font-bold leading-relaxed border ${
+            missionRuntime.feedbackType === 'ok'
+              ? 'bg-[#064E3B] border-[#10B981] text-[#A7F3D0]'
+              : 'bg-[#3B2314] border-[#F59E0B] text-[#FDE68A]'
+          }">
+            ${missionRuntime.feedbackMsg}
+          </div>
+        ` : ''}
+
+        <!-- Answer Input Area (Choice Buttons OR Custom Thumb Numpad) -->
+        ${stage.choices ? renderChoicePad(stage) : renderThumbNumpad(stage)}
+      `;
+    }
+
+    function renderStageSandbox(stage) {
+      switch (stage.type) {
+        case 'sandbox_legs': {
+          const totalLegs = missionRuntime.legsInitialized
+            ? missionRuntime.legsUnits.reduce((a, b) => a + b, 0)
+            : 0;
+          const remain = 22 - totalLegs;
+          const beastCount = missionRuntime.legsUnits.filter(x => x === 4).length;
+
+          return `
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold text-[#FBBF24]">🛠️ 战术沙盘：点击机甲切换 2腿 / 4腿</span>
+              <button onclick="activateTwoLegMode()" class="px-2.5 py-1 rounded-lg text-xs font-bold ${missionRuntime.legsInitialized ? 'bg-[#065F46] text-[#A7F3D0]' : 'bg-[#F59E0B] text-[#0B1220]'}">
+                ${missionRuntime.legsInitialized ? '已按双足就位' : '① 启动全员双足'}
+              </button>
+            </div>
+
+            <div class="grid grid-cols-4 gap-2 my-2.5">
+              ${missionRuntime.legsUnits.map((legs, idx) => {
+                const isFour = missionRuntime.legsInitialized && legs === 4;
+                const isTwo = missionRuntime.legsInitialized && legs === 2;
+                return `
+                  <button onclick="toggleMechaUnitLegs(${idx})" class="p-2 rounded-xl border text-center transition-all active:scale-95 ${
+                    !missionRuntime.legsInitialized
+                      ? 'bg-[#0D1729] border-[#263B61] text-[#64748B]'
+                      : isFour
+                        ? 'bg-[#3B2314] border-[#FBBF24] text-[#FDE68A]'
+                        : 'bg-[#12263F] border-[#38BDF8]/60 text-[#BAE6FD]'
+                  }">
+                    <div class="text-xl leading-none">${!missionRuntime.legsInitialized ? '❔' : (isFour ? '🦏' : '🤖')}</div>
+                    <div class="text-[11px] font-bold mt-1">${!missionRuntime.legsInitialized ? `${idx+1}号舱` : (isFour ? '4条腿' : '2条腿')}</div>
+                  </button>
+                `;
+              }).join('')}
+            </div>
+
+            <div class="px-3 py-2 rounded-lg bg-[#0B1324] border border-[#23385C] flex items-center justify-between text-xs">
+              <span>已装腿数：<strong class="text-[#38BDF8] font-mono">${totalLegs}</strong> / 22条</span>
+              <span class="${remain === 0 ? 'text-[#34D399] font-extrabold' : 'text-[#FBBF24] font-bold'}">
+                ${!missionRuntime.legsInitialized
+                  ? '请先点右上角启动全员双足'
+                  : remain === 0
+                    ? `✅ 刚好22条！四足兽 = ${beastCount}台`
+                    : remain > 0
+                      ? `还剩 ${remain} 条腿待加装`
+                      : `超出了 ${Math.abs(remain)} 条腿，点1台收起`}
+              </span>
+            </div>
+          `;
+        }
+
+        case 'sandbox_battery': {
+          const totalPower = missionRuntime.batteryUnits.reduce((a, b) => a + b, 0);
+          const diff = 21 - totalPower;
+          const fiveCount = missionRuntime.batteryUnits.filter(x => x === 5).length;
+
+          return `
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold text-[#FBBF24]">🔋 电池模拟槽（默认全按2格电算 = 12格）</span>
+              <span class="text-xs text-[#94A3B8]">点击电池升级为5格电</span>
+            </div>
+            <div class="grid grid-cols-6 gap-1.5 my-2">
+              ${missionRuntime.batteryUnits.map((val, idx) => `
+                <button onclick="toggleBatteryUnit(${idx})" class="py-2.5 px-1 rounded-xl border text-center active:scale-95 ${
+                  val === 5
+                    ? 'bg-[#064E3B] border-[#34D399] text-[#A7F3D0]'
+                    : 'bg-[#12263F] border-[#38BDF8]/50 text-[#BAE6FD]'
+                }">
+                  <div class="text-base leading-none">${val === 5 ? '⚡' : '🔋'}</div>
+                  <div class="text-xs font-mono font-extrabold mt-1">${val}格</div>
+                </button>
+              `).join('')}
+            </div>
+            <div class="px-3 py-2 rounded-lg bg-[#0B1324] border border-[#23385C] flex items-center justify-between text-xs">
+              <span>当前总电量：<strong class="text-[#38BDF8] font-mono">${totalPower}</strong> / 21格</span>
+              <span class="${diff === 0 ? 'text-[#34D399] font-extrabold' : 'text-[#FBBF24] font-bold'}">
+                ${diff === 0 ? `✅ 电量吻合！五核电池 = ${fiveCount}块` : (diff > 0 ? `还差 ${diff} 格电（每升1块+3格）` : `超出 ${Math.abs(diff)} 格电`)}
+              </span>
+            </div>
+          `;
+        }
+
+        case 'sandbox_cycle_wheel': {
+          const icons = ['🔥', '⚡', '🛡️', '🌿'];
+          const bgCls = [
+            'bg-rose-950/70 border-rose-500/60 text-rose-200',
+            'bg-sky-950/70 border-sky-500/60 text-sky-200',
+            'bg-amber-950/70 border-amber-400 text-amber-200',
+            'bg-emerald-950/70 border-emerald-500/60 text-emerald-200'
+          ];
+
+          return `
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="text-xs font-extrabold text-[#FBBF24]">🎡 南昌之星 1～19 号能量舱</span>
+              <button onclick="toggleCyclePack()" class="px-3 py-1 rounded-lg text-xs font-bold ${missionRuntime.cyclePacked ? 'bg-[#065F46] text-[#A7F3D0]' : 'bg-[#F59E0B] text-[#0B1220]'}">
+                ${missionRuntime.cyclePacked ? '✅ 已按4个一组打包' : '📦 每4舱打包成组'}
+              </button>
+            </div>
+
+            ${!missionRuntime.cyclePacked ? `
+              <div class="grid grid-cols-8 gap-1.5 text-center my-2">
+                ${Array.from({ length: 19 }, (_, i) => {
+                  const num = i + 1;
+                  const known = num <= 6;
+                  return `
+                    <div class="py-1.5 rounded-lg border text-xs font-mono ${known ? bgCls[i % 4] : 'bg-[#0D1729] border-[#263B61] text-[#94A3B8]'}">
+                      <div>${known ? icons[i % 4] : '❔'}</div>
+                      <div class="text-[10px]">#${num}</div>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+              <p class="text-xs text-[#94A3B8] mt-1.5">点击右上角【每4舱打包成组】，看看19号落在余数第几个！</p>
+            ` : `
+              <div class="grid grid-cols-4 gap-1.5 my-2">
+                ${[1, 2, 3, 4].map(g => `
+                  <div class="p-2 rounded-lg bg-[#10233D] border border-[#2F5282] text-center">
+                    <div class="text-[11px] font-bold text-[#38BDF8]">第 ${g} 箱</div>
+                    <div class="text-xs mt-0.5">🔥⚡🛡️🌿</div>
+                    <div class="text-[10px] text-[#94A3B8] font-mono">#${(g-1)*4+1}~#${g*4}</div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="p-2.5 rounded-xl bg-[#1E293B] border border-[#FBBF24] flex items-center justify-between">
+                <div class="text-xs">
+                  <div class="font-bold text-[#FDE68A]">19 ÷ 4 = 4箱 …… 余3个舱：</div>
+                  <div class="text-[#CBD5E1] mt-0.5">数余下的3个：#17🔥 → #18⚡ → <strong class="text-[#FBBF24]">#19🛡️</strong></div>
+                </div>
+                <div class="flex gap-1.5">
+                  <span class="px-2 py-1 rounded bg-rose-950 border border-rose-500 text-xs">#17🔥</span>
+                  <span class="px-2 py-1 rounded bg-sky-950 border border-sky-500 text-xs">#18⚡</span>
+                  <span class="px-2 py-1 rounded bg-amber-900 border-2 border-amber-400 text-xs font-extrabold">#19🛡️</span>
+                </div>
+              </div>
+            `}
+          `;
+        }
+
+        case 'sandbox_fleet_cycle': {
+          return `
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold text-[#FBBF24]">🛸 巡逻编队（每组：1先锋 + 2护卫 + 2支援 = 5台）</span>
+              <button onclick="toggleFleetMatrix()" class="px-2.5 py-1 rounded-lg text-xs font-bold ${missionRuntime.fleetExpanded ? 'bg-[#065F46] text-[#A7F3D0]' : 'bg-[#F59E0B] text-[#0B1220]'}">
+                ${missionRuntime.fleetExpanded ? '已展开编队' : '展开22台矩阵'}
+              </button>
+            </div>
+
+            ${!missionRuntime.fleetExpanded ? `
+              <div class="p-3 rounded-xl bg-[#0B1324] border border-[#23385C] flex items-center justify-around text-xs">
+                <span class="px-2 py-1 rounded bg-[#1E293B] text-[#94A3B8]">🚀 先锋×1</span>
+                <span class="px-2.5 py-1 rounded bg-[#3B2314] border border-[#FBBF24] text-[#FDE68A] font-bold">🛡️ 护卫×2</span>
+                <span class="px-2 py-1 rounded bg-[#1E293B] text-[#94A3B8]">🔧 支援×2</span>
+              </div>
+              <p class="text-xs text-[#94A3B8] mt-2">先自己心算 22 ÷ 5 有几组余几台，或点击右上角【展开22台矩阵】验证！</p>
+            ` : `
+              <div class="space-y-1.5 my-1.5 text-xs font-mono">
+                ${[1, 2, 3, 4].map(row => `
+                  <div class="flex items-center justify-between px-2.5 py-1 rounded bg-[#0D182C] border border-[#22385E]">
+                    <span class="text-[#94A3B8]">第${row}组(5台)</span>
+                    <span>🚀 <strong class="text-[#FBBF24]">🛡️🛡️</strong> 🔧🔧</span>
+                    <span class="text-[#34D399]">护卫×2</span>
+                  </div>
+                `).join('')}
+                <div class="flex items-center justify-between px-2.5 py-1.5 rounded bg-[#2D1F12] border border-[#F59E0B]">
+                  <span class="text-[#FDE68A] font-bold">余下2台(#21,#22)</span>
+                  <span>🚀 <strong class="text-[#FBBF24]">🛡️</strong></span>
+                  <span class="text-[#FBBF24] font-bold">护卫+1</span>
+                </div>
+              </div>
+            `}
+          `;
+        }
+
+        case 'sandbox_sum_multiple': {
+          const m = missionRuntime.mainMultipleCount;
+          const totalParts = 1 + m;
+          const perPart = 24 / totalParts;
+          const isThree = m === 3;
+
+          return `
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold text-[#FBBF24]">📊 线段图积木：把主库调成副库的 3 倍</span>
+              <div class="flex items-center gap-1">
+                <button onclick="adjustMultiple(-1)" class="w-7 h-7 rounded bg-[#1E2F4F] border border-[#3B598F] text-sm font-bold">-1</button>
+                <button onclick="adjustMultiple(1)" class="w-7 h-7 rounded bg-[#F59E0B] text-[#0B1220] text-sm font-extrabold">+1</button>
+              </div>
+            </div>
+
+            <div class="space-y-2.5 my-2.5 p-2.5 rounded-xl bg-[#0B1324] border border-[#23385C]">
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-[#94A3B8] w-12 shrink-0">副库(1倍)</span>
+                <div class="w-16 h-8 rounded-lg bg-[#163459] border border-[#38BDF8] flex items-center justify-center text-xs font-extrabold text-[#BAE6FD]">
+                  ${missionRuntime.crystalsDistributed && isThree ? '6颗' : '1份'}
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-[#FDE68A] font-bold w-12 shrink-0">主库(${m}倍)</span>
+                <div class="flex gap-1.5 flex-wrap">
+                  ${Array.from({ length: m }, () => `
+                    <div class="w-16 h-8 rounded-lg ${isThree ? 'bg-[#3B2314] border-[#FBBF24] text-[#FDE68A]' : 'bg-[#1E293B] border-[#475569] text-[#CBD5E1]'} border flex items-center justify-center text-xs font-extrabold">
+                      ${missionRuntime.crystalsDistributed && isThree ? '6颗' : '1份'}
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs text-[#CBD5E1]">
+                ${isThree
+                  ? (missionRuntime.crystalsDistributed ? '✅ 共4等份 = 24颗，每份6颗，主库3份！' : '倍数正确（共 1+3=4 份）！点右侧平分晶石 👉')
+                  : `当前主库是 ${m} 倍，请点 [+1] 拼成 3 倍`}
+              </span>
+              ${isThree ? `
+                <button onclick="distributeCrystals()" class="px-3 py-1.5 rounded-lg text-xs font-bold shrink-0 ${missionRuntime.crystalsDistributed ? 'bg-[#065F46] text-[#A7F3D0]' : 'bg-[#0EA5E9] text-white'}">
+                  ${missionRuntime.crystalsDistributed ? '已均分24颗' : '⚡ 均分24颗'}
+                </button>
+              ` : ''}
+            </div>
+          `;
+        }
+
+        case 'sandbox_sum_diff': {
+          const cut = missionRuntime.diffCutApplied;
+          return `
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold text-[#FBBF24]">⚡ 和差激光切割台（总和 26 兆瓦）</span>
+              <button onclick="toggleDiffCut()" class="px-2.5 py-1 rounded-lg text-xs font-bold ${cut ? 'bg-[#065F46] text-[#A7F3D0]' : 'bg-[#F59E0B] text-[#0B1220]'}">
+                ${cut ? '✅ 已切齐平分' : '✂️ 切去多出的4兆瓦'}
+              </button>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#0B1324] border border-[#23385C] space-y-2.5">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-[#FDE68A] w-10">左翼</span>
+                <div class="h-8 rounded-l-lg ${cut ? 'rounded-r-lg' : ''} bg-[#163459] border border-[#38BDF8] flex items-center justify-center text-xs font-bold text-[#BAE6FD]" style="width: 145px;">
+                  ${cut ? '11 兆瓦' : '与右翼同样长'}
+                </div>
+                <div class="h-8 px-2.5 rounded-r-lg border flex items-center justify-center text-xs font-extrabold transition-all ${
+                  cut
+                    ? 'opacity-45 translate-x-2 border-dashed border-[#F59E0B] text-[#FBBF24]'
+                    : 'bg-[#3B2314] border-[#FBBF24] text-[#FDE68A]'
+                }">
+                  +4
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-[#94A3B8] w-10">右翼</span>
+                <div class="h-8 rounded-lg bg-[#163459] border border-[#38BDF8] flex items-center justify-center text-xs font-bold text-[#BAE6FD]" style="width: 145px;">
+                  ${cut ? '11 兆瓦' : '？兆瓦'}
+                </div>
+              </div>
+
+              <div class="text-xs pt-1 border-t border-[#1E3152] text-[#CBD5E1]">
+                ${cut
+                  ? '💡 切掉 4 后总推力剩 <strong class="text-[#38BDF8]">26 - 4 = 22</strong>，平分得每条 <strong class="text-[#38BDF8]">11</strong>！别忘把 <strong class="text-[#FBBF24]">+4</strong> 加回左翼哦！'
+                  : '左翼比右翼长一截(+4)，直接除以2分不匀，点击右上角【切去多出的4兆瓦】试试！'}
+              </div>
+            </div>
+          `;
+        }
+
+        case 'sandbox_perimeter': {
+          const sh = missionRuntime.perimSlideH;
+          const sv = missionRuntime.perimSlideV;
+          // SVG Coordinates: Full rect x=45..215 (width 170 => 10m), y=25..155 (height 130 => 8m)
+          // Recessed steps:
+          // Top horizontal solid: 45..115 at y=25
+          // Step1 H: 115..165 at y=68 (slides up to y=25 when sh=true)
+          // Step2 H: 165..215 at y=110 (slides up to y=25 when sh=true)
+          // Step1 V: x=115 from y=25..68 (slides right to x=215 when sv=true)
+          // Step2 V: x=165 from y=68..110 (slides right to x=215 when sv=true)
+          // Right bottom solid V: x=215 from y=110..155
+          return `
+            <div class="flex items-center justify-between mb-2 gap-1">
+              <span class="text-xs font-extrabold text-[#FBBF24]">📐 动态护盾平移画板</span>
+              <div class="flex gap-1.5">
+                <button onclick="slidePerim('H')" class="px-2.5 py-1 rounded-lg text-xs font-bold ${sh ? 'bg-[#065F46] text-[#A7F3D0]' : 'bg-[#0EA5E9] text-white'}">
+                  ⬆ 平移横边
+                </button>
+                <button onclick="slidePerim('V')" class="px-2.5 py-1 rounded-lg text-xs font-bold ${sv ? 'bg-[#065F46] text-[#A7F3D0]' : 'bg-[#F59E0B] text-[#0B1220]'}">
+                  ➡ 平移竖边
+                </button>
+              </div>
+            </div>
+
+            <div class="rounded-xl bg-[#0B1324] border border-[#23385C] p-2">
+              <svg viewBox="0 0 265 180" class="w-full h-40">
+                <!-- Interior Shield Fill -->
+                <polygon points="45,25 115,25 115,68 165,68 165,110 215,110 215,155 45,155" fill="rgba(56, 189, 248, 0.1)" />
+
+                <!-- Ghost Target Dotted Outer Corner -->
+                <line x1="115" y1="25" x2="215" y2="25" stroke="#334E7B" stroke-width="2" stroke-dasharray="4 4" />
+                <line x1="215" y1="25" x2="215" y2="110" stroke="#334E7B" stroke-width="2" stroke-dasharray="4 4" />
+
+                <!-- Fixed Main Edges (Left 8m, Bottom 10m, Top-Left, Right-Bottom) -->
+                <line x1="45" y1="25" x2="45" y2="155" stroke="#E2E8F0" stroke-width="3.5" stroke-linecap="round" />
+                <line x1="45" y1="155" x2="215" y2="155" stroke="#E2E8F0" stroke-width="3.5" stroke-linecap="round" />
+                <line x1="45" y1="25" x2="115" y2="25" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round" />
+                <line x1="215" y1="110" x2="215" y2="155" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round" />
+
+                <!-- Sliding Horizontal Step Edges (Cyan) -->
+                <line class="slide-edge" x1="115" y1="${sh ? 25 : 68}" x2="165" y2="${sh ? 25 : 68}" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+                <line class="slide-edge" x1="165" y1="${sh ? 25 : 110}" x2="215" y2="${sh ? 25 : 110}" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+
+                <!-- Sliding Vertical Step Edges (Amber) -->
+                <line class="slide-edge" x1="${sv ? 215 : 115}" y1="25" x2="${sv ? 215 : 115}" y2="68" stroke="#FBBF24" stroke-width="4" stroke-linecap="round" />
+                <line class="slide-edge" x1="${sv ? 215 : 165}" y1="68" x2="${sv ? 215 : 165}" y2="110" stroke="#FBBF24" stroke-width="4" stroke-linecap="round" />
+
+                <!-- Labels -->
+                <text x="22" y="95" fill="#F8FAFC" font-size="12" font-weight="bold">8米</text>
+                <text x="130" y="173" text-anchor="middle" fill="#F8FAFC" font-size="12" font-weight="bold">10米</text>
+                ${sh && sv ? `<text x="130" y="96" text-anchor="middle" fill="#34D399" font-size="12" font-weight="bold">完整 10×8 长方形！</text>` : ''}
+              </svg>
+            </div>
+          `;
+        }
+
+        case 'sandbox_trees': {
+          const plantedCount = missionRuntime.treesPlanted.filter(Boolean).length;
+          return `
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold text-[#FBBF24]">🗼 30米星桥防线（每隔5米1个点位）</span>
+              <button onclick="plantAllTowers()" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-[#0EA5E9] text-white">
+                ⚡ 一键点亮全线
+              </button>
+            </div>
+
+            <div class="p-3 rounded-xl bg-[#0B1324] border border-[#23385C]">
+              <div class="relative flex items-center justify-between pt-2 pb-1">
+                <div class="absolute left-3 right-3 top-6 h-1 bg-[#263F6B]"></div>
+                ${missionRuntime.treesPlanted.map((on, idx) => `
+                  <button onclick="toggleTowerAt(${idx})" class="relative z-10 flex flex-col items-center gap-1 active:scale-95">
+                    <div class="w-8 h-8 rounded-full border flex items-center justify-center text-sm ${
+                      on ? 'bg-[#064E3B] border-[#34D399] shadow-md' : 'bg-[#16243D] border-[#3B5584] text-[#64748B]'
+                    }">
+                      ${on ? '🗼' : '➕'}
+                    </div>
+                    <span class="text-[10px] font-mono text-[#CBD5E1]">${idx * 5}m</span>
+                  </button>
+                `).join('')}
+              </div>
+              <div class="mt-2 pt-2 border-t border-[#1E3152] flex items-center justify-between text-xs">
+                <span class="text-[#94A3B8]">间隔段数：<strong class="text-[#38BDF8]">6段</strong> (30÷5)</span>
+                <span class="${plantedCount === 7 ? 'text-[#34D399] font-extrabold' : 'text-[#FBBF24] font-bold'}">
+                  已安装激光塔：${plantedCount} 座
+                </span>
+              </div>
+            </div>
+          `;
+        }
+      }
+      return '';
+    }
+
+    /* Sandbox Interaction Handlers */
+    function activateTwoLegMode() {
+      sfxMechSwitch();
+      missionRuntime.legsInitialized = true;
+      missionRuntime.legsUnits = [2, 2, 2, 2, 2, 2, 2, 2];
+      render();
+    }
+
+    function toggleMechaUnitLegs(idx) {
+      sfxMechSwitch();
+      if (!missionRuntime.legsInitialized) {
+        missionRuntime.legsInitialized = true;
+      }
+      missionRuntime.legsUnits[idx] = missionRuntime.legsUnits[idx] === 2 ? 4 : 2;
+      render();
+    }
+
+    function toggleBatteryUnit(idx) {
+      sfxMechSwitch();
+      missionRuntime.batteryUnits[idx] = missionRuntime.batteryUnits[idx] === 2 ? 5 : 2;
+      render();
+    }
+
+    function toggleCyclePack() {
+      sfxMechSwitch();
+      missionRuntime.cyclePacked = !missionRuntime.cyclePacked;
+      render();
+    }
+
+    function toggleFleetMatrix() {
+      sfxMechSwitch();
+      missionRuntime.fleetExpanded = !missionRuntime.fleetExpanded;
+      render();
+    }
+
+    function adjustMultiple(delta) {
+      sfxMechSwitch();
+      const next = Math.min(5, Math.max(1, missionRuntime.mainMultipleCount + delta));
+      missionRuntime.mainMultipleCount = next;
+      missionRuntime.crystalsDistributed = false;
+      render();
+    }
+
+    function distributeCrystals() {
+      sfxSuccess();
+      missionRuntime.crystalsDistributed = true;
+      render();
+    }
+
+    function toggleDiffCut() {
+      sfxMechSwitch();
+      missionRuntime.diffCutApplied = !missionRuntime.diffCutApplied;
+      render();
+    }
+
+    function slidePerim(axis) {
+      sfxMechSwitch();
+      if (axis === 'H') missionRuntime.perimSlideH = !missionRuntime.perimSlideH;
+      if (axis === 'V') missionRuntime.perimSlideV = !missionRuntime.perimSlideV;
+      render();
+    }
+
+    function toggleTowerAt(idx) {
+      sfxMechSwitch();
+      missionRuntime.treesPlanted[idx] = !missionRuntime.treesPlanted[idx];
+      render();
+    }
+
+    function plantAllTowers() {
+      sfxMechSwitch();
+      missionRuntime.treesPlanted = [true, true, true, true, true, true, true];
+      render();
+    }
+
+    function triggerRadarHint() {
+      sfxHint();
+      if (missionRuntime.hintLevel < 3) {
+        missionRuntime.hintLevel += 1;
+        state.hintsUsedCount += 1;
+        saveState();
+      }
+      render();
+    }
+
+    /* Custom Choice Pad & Thumb Numpad */
+    function renderChoicePad(stage) {
+      return `
+        <div class="tac-panel p-3.5">
+          <div class="text-xs font-bold text-[#CBD5E1] mb-2.5">${stage.questionShort}</div>
+          <div class="grid grid-cols-2 gap-2.5">
+            ${stage.choices.map(c => `
+              <button onclick="submitChoice('${c.val}')" class="py-3 px-3 rounded-xl border-2 font-extrabold text-sm active:scale-95 transition-transform ${c.color}">
+                ${c.label}
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderThumbNumpad(stage) {
+      return `
+        <div class="tac-panel p-3">
+          <div class="flex items-center justify-between mb-2.5 px-1">
+            <span class="text-xs font-bold text-[#CBD5E1]">${stage.questionShort}</span>
+            <div class="flex items-center gap-1.5">
+              <div class="min-w-[84px] h-9 px-3 rounded-lg bg-[#09101E] border-2 border-[#38BDF8] flex items-center justify-center font-mono text-lg font-extrabold text-[#FBBF24]">
+                ${missionRuntime.userInput || '?'}
+              </div>
+              <span class="text-xs font-bold text-[#94A3B8]">${stage.unit || ''}</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-2">
+            ${['1','2','3','⌫','4','5','6','清空','7','8','9','0'].map(key => {
+              if (key === '⌫') {
+                return `<button onclick="pressKey('BACK')" class="numpad-key text-sm text-[#FDA4AF]">⌫ 退格</button>`;
+              }
+              if (key === '清空') {
+                return `<button onclick="pressKey('CLR')" class="numpad-key text-xs text-[#94A3B8]">清空</button>`;
+              }
+              return `<button onclick="pressKey('${key}')" class="numpad-key">${key}</button>`;
+            }).join('')}
+          </div>
+
+          <button onclick="submitAnswer()" class="tac-btn-primary w-full py-3 mt-2.5 text-sm tracking-wide">
+            🚀 确认发射校准能量
+          </button>
+        </div>
+      `;
+    }
+
+    function pressKey(k) {
+      sfxTap();
+      if (k === 'BACK') {
+        missionRuntime.userInput = missionRuntime.userInput.slice(0, -1);
+      } else if (k === 'CLR') {
+        missionRuntime.userInput = '';
+      } else if (missionRuntime.userInput.length < 4) {
+        missionRuntime.userInput += k;
+      }
+      render();
+    }
+
+    function submitChoice(val) {
+      missionRuntime.userInput = val;
+      submitAnswer();
+    }
+
+    function submitAnswer() {
+      const sec = SECTORS.find(s => s.id === missionRuntime.activeSectorId);
+      const stage = sec.stages[missionRuntime.stageIndex];
+      const cleaned = String(missionRuntime.userInput).trim();
+
+      if (!cleaned) {
+        sfxRecalibrate();
+        missionRuntime.feedbackType = 'warn';
+        missionRuntime.feedbackMsg = '🛰️ 机甲副官：请先用下方数字键输入校准数值哦！';
+        render();
+        return;
+      }
+
+      if (cleaned === stage.answer) {
+        sfxSuccess();
+        const firstTime = !state.completedStages[stage.id];
+        state.completedStages[stage.id] = true;
+        if (firstTime) {
+          state.crystals += 40;
+        }
+        saveState();
+
+        if (missionRuntime.stageIndex === 0) {
+          // Stage 1 cleared -> Show crisp modal leading right into Stage 2!
+          showModal(`
+            <div class="text-4xl mb-2">🎯</div>
+            <h3 class="text-lg font-extrabold text-[#34D399]">第 1 关校准成功！</h3>
+            <p class="text-xs text-[#E2E8F0] mt-2 leading-relaxed text-left bg-[#0D1729] p-3 rounded-xl border border-[#243B61]">
+              ${stage.successNote}
+            </p>
+            <div class="text-xs font-bold text-[#FBBF24] mt-3">${firstTime ? '+40 💎 超导晶石' : '思维模型再次巩固！'}</div>
+            <button onclick="proceedToStageTwo()" class="tac-btn-primary w-full py-3 mt-4 text-sm">
+              ⚡ 趁热打铁：进入第2关（最后1题！）
+            </button>
+          `);
+        } else {
+          // Sector cleared! Unlock Mecha Part(s)!
+          state.sessionsCompleted += 1;
+          let newlyUnlocked = [];
+          sec.rewards.forEach(partId => {
+            if (!state.unlockedParts.includes(partId)) {
+              state.unlockedParts.push(partId);
+              newlyUnlocked.push(partId);
+            }
+          });
+          if (newlyUnlocked.length > 0) {
+            state.hasNewPartBadge = true;
+            setTimeout(() => sfxUnlockPart(), 200);
+          }
+          saveState();
+
+          const partBadges = sec.rewards.map(pid => {
+            const p = MECHA_PARTS[pid];
+            return `<div class="px-3 py-2 rounded-xl bg-[#162847] border border-[#FBBF24] flex items-center gap-2 text-left">
+              <span class="text-2xl">${p.icon}</span>
+              <div>
+                <div class="text-xs font-extrabold text-[#FDE68A]">${p.name}</div>
+                <div class="text-[11px] text-[#94A3B8]">${p.desc}</div>
+              </div>
+            </div>`;
+          }).join('');
+
+          const allSix = state.unlockedParts.length === 6;
+
+          showModal(`
+            <div class="text-4xl mb-1">${allSix ? '👑' : '🛠️'}</div>
+            <h3 class="text-lg font-extrabold text-[#FBBF24]">
+              ${allSix ? '洪都·星耀号 NCH-0791 全装觉醒！' : `${sec.landmark} · 双关攻克！`}
+            </h3>
+            <p class="text-xs text-[#CBD5E1] mt-1.5 leading-relaxed text-left bg-[#0D1729] p-2.5 rounded-xl border border-[#243B61]">
+              ${stage.successNote}
+            </p>
+            <div class="mt-3 space-y-2">
+              <div class="text-xs font-bold text-[#38BDF8]">🎁 已挂载机甲核心部件：</div>
+              ${partBadges}
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-4">
+              <button onclick="closeModalAndGo('missions')" class="tac-btn-slate py-2.5 text-xs">返回星域地图</button>
+              <button onclick="closeModalAndGo('hangar')" class="tac-btn-primary py-2.5 text-xs">🤖 去工坊看新机甲</button>
+            </div>
+          `);
+        }
+      } else {
+        // Gentle non-punishing engineering calibration message
+        sfxRecalibrate();
+        missionRuntime.feedbackType = 'warn';
+        if (missionRuntime.hintLevel === 0) {
+          missionRuntime.hintLevel = 1;
+        }
+        missionRuntime.feedbackMsg = `🔧 能量读数（${cleaned}）还差一点点吻合！别急，已为你开启上方【📡 战术雷达扫描】，动手点一点沙盘就能发现玄机！`;
+        missionRuntime.userInput = '';
+        render();
+      }
+    }
+
+    function proceedToStageTwo() {
+      sfxTap();
+      hideModal();
+      initStageRuntime(missionRuntime.activeSectorId, 1);
+      render();
+    }
+
+    function showModal(innerHtml) {
+      document.getElementById('modal-box').innerHTML = innerHtml;
+      document.getElementById('modal-overlay').classList.remove('hidden');
+    }
+
+    function hideModal() {
+      document.getElementById('modal-overlay').classList.add('hidden');
+    }
+
+    function closeModalAndGo(tab) {
+      sfxTap();
+      hideModal();
+      missionRuntime.activeSectorId = null;
+      state.activeTab = tab;
+      if (tab === 'hangar') state.hasNewPartBadge = false;
+      saveState();
+      render();
+    }
+
+    /* =========================================================================
+       7. TAB 2: MECHA HANGAR & ASSEMBLY BAY (机甲工坊)
+       ========================================================================= */
+    function renderHangarTab() {
+      const displayParts = state.previewFullMecha
+        ? Object.keys(MECHA_PARTS)
+        : state.unlockedParts;
+
+      const partCards = Object.values(MECHA_PARTS).map(p => {
+        const unlocked = state.unlockedParts.includes(p.id);
+        return `
+          <div class="p-2.5 rounded-xl border ${unlocked ? 'bg-[#142541] border-[#38BDF8]/60' : 'bg-[#0D1628] border-[#1F3152] opacity-80'} flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-lg ${unlocked ? 'bg-[#1E3A63]' : 'bg-[#131F36]'} flex items-center justify-center text-lg shrink-0">
+              ${unlocked ? p.icon : '🔒'}
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="text-xs font-extrabold text-[#F8FAFC] truncate">${p.name}</div>
+              <div class="text-[11px] ${unlocked ? 'text-[#34D399]' : 'text-[#94A3B8]'} truncate">
+                ${unlocked ? '✅ 已挂载上机' : `通关【${p.sectorTitle}】掉落`}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const liveryBtns = Object.values(LIVERIES).map(liv => {
+        const active = state.livery === liv.id;
+        return `
+          <button onclick="selectLivery('${liv.id}')" class="p-2 rounded-xl border text-center transition-all ${
+            active ? 'bg-[#1F3358] border-[#FBBF24]' : 'bg-[#111D33] border-[#253B63]'
+          }">
+            <div class="flex items-center justify-center gap-1 mb-1">
+              <span class="w-3 h-3 rounded-full" style="background:${liv.primary}"></span>
+              <span class="w-3 h-3 rounded-full" style="background:${liv.secondary}"></span>
+            </div>
+            <div class="text-xs font-bold text-[#F8FAFC]">${liv.name}</div>
+            <div class="text-[10px] text-[#94A3B8]">${liv.sub}</div>
+          </button>
+        `;
+      }).join('');
+
+      return `
+        <section class="tac-panel p-4 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-1">
+            <div>
+              <span class="text-[11px] font-mono text-[#38BDF8]">HANGAR BAY // YAOHU-0791</span>
+              <h2 class="text-base font-extrabold text-[#F8FAFC]">洪都·星耀号 机甲总装台</h2>
+            </div>
+            <button onclick="togglePreviewFull()" class="px-2.5 py-1.5 rounded-lg text-xs font-bold border ${
+              state.previewFullMecha
+                ? 'bg-[#3B2314] border-[#FBBF24] text-[#FDE68A]'
+                : 'bg-[#15243E] border-[#2E4A7A] text-[#CBD5E1]'
+            }">
+              ${state.previewFullMecha ? '👁️ 退出满配预览' : '👁️ 预览满配形态'}
+            </button>
+          </div>
+
+          <div class="my-2 py-2 rounded-2xl bg-[#09101E] border border-[#1E3256] relative">
+            ${renderMechaSVG(displayParts, state.livery, state.boostActive)}
+            <div class="text-center mt-1">
+              <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-[#13223B] text-[#94A3B8] border border-[#243B63]">
+                ${state.previewFullMecha ? '当前为满配设计蓝图预览模式' : `已实装部件：${state.unlockedParts.length} / 6`}
+              </span>
+            </div>
+          </div>
+
+          <button onclick="triggerMechaBoost()" class="tac-btn-primary w-full py-2.5 mt-2 text-xs">
+            🔥 点火测试：启动星耀推进演出
+          </button>
+        </section>
+
+        <!-- Paint Liveries -->
+        <section class="mt-3.5">
+          <h3 class="text-xs font-extrabold text-[#CBD5E1] mb-2 px-0.5">🎨 专属机甲涂装切换（免费解锁）</h3>
+          <div class="grid grid-cols-3 gap-2">
+            ${liveryBtns}
+          </div>
+        </section>
+
+        <!-- 6 Modular Parts List -->
+        <section class="mt-3.5">
+          <h3 class="text-xs font-extrabold text-[#CBD5E1] mb-2 px-0.5">🔩 六大模块化装甲部件清单</h3>
+          <div class="grid grid-cols-2 gap-2">
+            ${partCards}
+          </div>
+        </section>
+      `;
+    }
+
+    function selectLivery(id) {
+      sfxMechSwitch();
+      state.livery = id;
+      saveState();
+      render();
+    }
+
+    function togglePreviewFull() {
+      sfxTap();
+      state.previewFullMecha = !state.previewFullMecha;
+      saveState();
+      render();
+    }
+
+    function triggerMechaBoost() {
+      sfxUnlockPart();
+      state.boostActive = true;
+      render();
+      setTimeout(() => {
+        state.boostActive = false;
+        if (state.activeTab === 'hangar') render();
+      }, 2400);
+    }
+
+    /* =========================================================================
+       8. TAB 3: 60-SECOND CLEVER CALCULATION BLITZ (速算充能舱)
+       ========================================================================= */
+    function renderBlitzTab() {
+      if (!blitzRuntime.running) {
+        return `
+          <section class="tac-panel p-4 text-center">
+            <div class="text-4xl mb-2">⚡</div>
+            <h2 class="text-lg font-extrabold text-[#F8FAFC]">60秒 凑整巧算充能舱</h2>
+            <p class="text-xs text-[#CBD5E1] mt-1.5 leading-relaxed">
+              三年级奥数计算核心不是“硬列竖式死算”，而是练就一双能瞬间发现<strong class="text-[#FBBF24]">“好朋友数（25×4、125×8、凑整百）”</strong>的火眼金睛！
+            </p>
+
+            <div class="grid grid-cols-2 gap-2.5 my-4">
+              <div class="p-3 rounded-xl bg-[#0C1526] border border-[#22385E]">
+                <div class="text-xs text-[#94A3B8]">历史最高充能</div>
+                <div class="text-xl font-mono font-extrabold text-[#34D399] mt-0.5">${state.blitzBestScore} 分</div>
+              </div>
+              <div class="p-3 rounded-xl bg-[#0C1526] border border-[#22385E]">
+                <div class="text-xs text-[#94A3B8]">单局时长</div>
+                <div class="text-xl font-mono font-extrabold text-[#38BDF8] mt-0.5">60 秒</div>
+              </div>
+            </div>
+
+            <div class="text-left p-3 rounded-xl bg-[#0F223A] border border-[#2B4C7E] text-xs text-[#BAE6FD] space-y-1 mb-4">
+              <div class="font-bold text-[#FDE68A]">💡 机甲师三大巧算口诀：</div>
+              <div>1. 接近整百先凑整：<code class="text-white">198 + 57 = 200 + 57 - 2</code></div>
+              <div>2. 乘法王牌好搭档：<code class="text-white">25 × 4 = 100</code>，<code class="text-white">125 × 8 = 1000</code></div>
+              <div>3. 尾巴互补先牵手：<code class="text-white">46 + 79 + 54 = (46+54) + 79</code></div>
+            </div>
+
+            <button onclick="startBlitzGame()" class="tac-btn-primary w-full py-3.5 text-sm">
+              ⚡ 启动 60 秒反应堆充能
+            </button>
+          </section>
+        `;
+      }
+
+      const q = BLITZ_QUESTIONS[blitzRuntime.qIndex % BLITZ_QUESTIONS.length];
+      return `
+        <section class="tac-panel p-4">
+          <div class="flex items-center justify-between text-xs font-bold mb-3">
+            <span class="px-2.5 py-1 rounded-lg bg-[#0D182C] border border-[#294370] text-[#38BDF8] font-mono">
+              ⏱️ 剩余 ${blitzRuntime.timeLeft}s
+            </span>
+            <span class="text-[#FBBF24] font-mono text-sm">🔥 连击 ×${blitzRuntime.streak}</span>
+            <span class="px-2.5 py-1 rounded-lg bg-[#064E3B] text-[#34D399] font-mono">
+              得分 ${blitzRuntime.score}
+            </span>
+          </div>
+
+          <div class="py-6 px-3 rounded-2xl bg-[#09101E] border-2 border-[#2A4575] text-center my-2">
+            <div class="text-xs text-[#94A3B8] mb-1">心算巧算下面算式：</div>
+            <div class="text-3xl font-mono font-extrabold text-[#F8FAFC] tracking-wider">${q.expr} = ?</div>
+          </div>
+
+          <div class="p-2.5 rounded-xl bg-[#0F243D] border border-[#2C5282] text-xs text-[#BAE6FD] my-3">
+            💡 <strong>巧算芯片提示：</strong>${q.tip}
+          </div>
+
+          <div class="grid grid-cols-2 gap-2.5">
+            ${q.options.map(opt => `
+              <button onclick="answerBlitz('${opt}')" class="tac-btn-slate py-3.5 text-lg font-mono font-extrabold active:scale-95">
+                ${opt}
+              </button>
+            `).join('')}
+          </div>
+        </section>
+      `;
+    }
+
+    function startBlitzGame() {
+      sfxTap();
+      blitzRuntime = {
+        running: true,
+        timeLeft: 60,
+        score: 0,
+        streak: 0,
+        qIndex: Math.floor(Math.random() * BLITZ_QUESTIONS.length),
+        lastTip: '',
+        timerId: null
+      };
+      blitzRuntime.timerId = setInterval(() => {
+        blitzRuntime.timeLeft -= 1;
+        if (blitzRuntime.timeLeft <= 0) {
+          finishBlitzGame();
+        } else if (state.activeTab === 'blitz') {
+          render();
+        }
+      }, 1000);
+      render();
+    }
+
+    function answerBlitz(choice) {
+      const q = BLITZ_QUESTIONS[blitzRuntime.qIndex % BLITZ_QUESTIONS.length];
+      if (choice === q.ans) {
+        sfxSuccess();
+        blitzRuntime.streak += 1;
+        blitzRuntime.score += 10 + Math.min(blitzRuntime.streak * 2, 10);
+      } else {
+        sfxRecalibrate();
+        blitzRuntime.streak = 0;
+      }
+      blitzRuntime.qIndex += 1;
+      render();
+    }
+
+    function finishBlitzGame() {
+      if (blitzRuntime.timerId) {
+        clearInterval(blitzRuntime.timerId);
+        blitzRuntime.timerId = null;
+      }
+      blitzRuntime.running = false;
+      const earned = Math.max(15, Math.round(blitzRuntime.score / 2));
+      state.crystals += earned;
+      if (blitzRuntime.score > state.blitzBestScore) {
+        state.blitzBestScore = blitzRuntime.score;
+      }
+      saveState();
+      sfxUnlockPart();
+      showModal(`
+        <div class="text-4xl mb-2">⚡</div>
+        <h3 class="text-lg font-extrabold text-[#FBBF24]">充能完毕！得分 ${blitzRuntime.score}</h3>
+        <p class="text-xs text-[#CBD5E1] mt-2">巧算反应速度超棒！已转化为机甲能源奖励：<strong class="text-[#34D399]">+${earned} 💎</strong></p>
+        <button onclick="hideModal(); render();" class="tac-btn-primary w-full py-2.5 mt-4 text-xs">收下晶石</button>
+      `);
+      render();
+    }
+
+    /* =========================================================================
+       9. TAB 4: COMMANDER ARCHIVE / PARENT INSIGHTS (家长指挥档案)
+       ========================================================================= */
+    function renderParentTab() {
+      const sDone = Object.keys(state.completedStages).length;
+      const dims = [
+        { label: '逻辑假设（鸡兔同笼）', pct: state.completedStages['s1_2'] ? 95 : (state.completedStages['s1_1'] ? 65 : 30) },
+        { label: '周期规律（余数分组）', pct: state.completedStages['s2_2'] ? 95 : (state.completedStages['s2_1'] ? 65 : 30) },
+        { label: '画图建模（和差倍图）', pct: state.completedStages['s3_2'] ? 95 : (state.completedStages['s3_1'] ? 65 : 30) },
+        { label: '空间转化（周长与间隔）', pct: state.completedStages['s4_2'] ? 95 : (state.completedStages['s4_1'] ? 65 : 30) },
+        { label: '数感巧算（凑整好朋友）', pct: Math.min(98, 35 + Math.round(state.blitzBestScore / 2)) }
+      ];
+
+      return `
+        <section class="tac-panel p-4 mb-3.5">
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="text-base font-extrabold text-[#F8FAFC]">📊 少年机甲师思维档案（家长舱）</h2>
+            <span class="text-xs px-2 py-0.5 rounded bg-[#1A2E4C] text-[#38BDF8]">三年级 · 南昌版</span>
+          </div>
+          <p class="text-xs text-[#94A3B8] leading-relaxed">
+            这里记录孩子的奥数思维点亮轨迹。刚接触奥数阶段，建议<strong class="text-[#FBBF24]">每天碎片时间只玩 1～2 个星域（约 5 分钟）</strong>，在孩子最有成就感时“见好就收”，他明天才会主动惦记着来闯关！
+          </p>
+
+          <div class="grid grid-cols-3 gap-2 my-3 text-center">
+            <div class="p-2.5 rounded-xl bg-[#0B1324] border border-[#23385C]">
+              <div class="text-lg font-mono font-extrabold text-[#34D399]">${sDone}/8</div>
+              <div class="text-[11px] text-[#94A3B8]">已通关卡</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-[#0B1324] border border-[#23385C]">
+              <div class="text-lg font-mono font-extrabold text-[#FBBF24]">${state.unlockedParts.length}/6</div>
+              <div class="text-[11px] text-[#94A3B8]">机甲部件</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-[#0B1324] border border-[#23385C]">
+              <div class="text-lg font-mono font-extrabold text-[#38BDF8]">${state.hintsUsedCount}次</div>
+              <div class="text-[11px] text-[#94A3B8]">雷达辅助</div>
+            </div>
+          </div>
+
+          <div class="space-y-2.5 mt-3">
+            ${dims.map(d => `
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-[#E2E8F0] font-semibold">${d.label}</span>
+                  <span class="font-mono text-[#38BDF8]">${d.pct}%</span>
+                </div>
+                <div class="h-2 rounded-full bg-[#0B1324] overflow-hidden border border-[#22375B]">
+                  <div class="h-full bg-gradient-to-r from-[#0EA5E9] to-[#34D399]" style="width:${d.pct}%"></div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <section class="tac-panel p-4 space-y-2.5">
+          <h3 class="text-xs font-extrabold text-[#CBD5E1]">🛠️ 家长调试与交付工具</h3>
+          <p class="text-xs text-[#94A3B8] leading-relaxed">
+            您可以先点击“一键解锁全机甲”体验所有特效，在把手机交给孩子正式玩之前，点“重置为新兵初始状态”即可。
+          </p>
+          <div class="grid grid-cols-2 gap-2.5 pt-1">
+            <button onclick="unlockAllDemo()" class="tac-btn-cyan py-2.5 text-xs">✨ 一键满配演示</button>
+            <button onclick="resetProgressClean()" class="tac-btn-slate py-2.5 text-xs text-[#FDA4AF]">🔄 重置给孩子重玩</button>
+          </div>
+        </section>
+      `;
+    }
+
+    function unlockAllDemo() {
+      sfxUnlockPart();
+      state.unlockedParts = Object.keys(MECHA_PARTS);
+      SECTORS.forEach(s => s.stages.forEach(st => { state.completedStages[st.id] = true; }));
+      state.crystals = 520;
+      state.hasNewPartBadge = true;
+      saveState();
+      render();
+    }
+
+    function resetProgressClean() {
+      sfxTap();
+      state = JSON.parse(JSON.stringify(defaultState));
+      state.activeTab = 'missions';
+      saveState();
+      render();
+    }
+
+    // Unlock iOS Safari WebAudio on first touch
+    document.addEventListener('touchstart', function() { getAudioCtx(); }, { once: true, passive: true });
+    // Boot Application
+    render();
+  </script>
+</body>
+</html>
